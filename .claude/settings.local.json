@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:southernsectorrising.org)",
+      "WebFetch(domain:www.harmonycdc.org)"
+    ]
+  }
+}
