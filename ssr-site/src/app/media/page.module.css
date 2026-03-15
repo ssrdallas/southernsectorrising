@@ -1,0 +1,413 @@
+/* ============================================
+   MEDIA — page.module.css
+   ============================================ */
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-dark) 50%, var(--color-soil) 100%);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23ffffff' fill-opacity='0.025'/%3E%3C/svg%3E");
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  max-width: 720px;
+}
+
+.heroTitle {
+  color: var(--color-white);
+  margin: var(--space-xs) 0 var(--space-xs);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.heroDesc {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+}
+
+.heroCta {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* ── Featured Card (BET) ── */
+.featuredCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  margin-bottom: var(--space-2xl);
+  border: 1px solid var(--color-gray-light);
+}
+
+.featuredMedia {
+  position: relative;
+  min-height: 400px;
+  background: var(--color-charcoal);
+  overflow: hidden;
+}
+
+.featuredImgPlaceholder {
+  height: 100%;
+  min-height: 400px;
+}
+
+.featuredOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+}
+
+.featuredMedia:hover .featuredOverlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.playBtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-forest-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base), background var(--transition-base);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.playBtn:hover {
+  transform: scale(1.1);
+  background: var(--color-gold-light);
+}
+
+.sourceBadge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 2;
+}
+
+.featuredBody {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.featuredMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.featuredNetwork {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.featuredTitle {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: var(--color-forest);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.featuredBody .lead {
+  margin: 0;
+}
+
+.featuredBody p:not(.lead) {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.featuredActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+/* ── Secondary Films Grid ── */
+.secondaryFilmsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.filmCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.filmCardMedia {
+  position: relative;
+  height: 220px;
+  background: var(--color-charcoal);
+  overflow: hidden;
+}
+
+.filmImgPlaceholder {
+  height: 220px;
+}
+
+.filmOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+}
+
+.filmCard:hover .filmOverlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.playBtnSm {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-forest-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base), background var(--transition-base);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.playBtnSm:hover {
+  transform: scale(1.1);
+  background: var(--color-gold-light);
+}
+
+.filmSourceBadge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 2;
+}
+
+.filmCardBody {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.filmCardBody h3 {
+  font-size: 1.2rem;
+  color: var(--color-forest);
+  margin: 0;
+}
+
+.filmCardBody p {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Press Grid ── */
+.pressGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.pressCard {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pressCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.pressType {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  background: var(--color-sand);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.pressTitle {
+  font-size: 1.05rem;
+  color: var(--color-forest);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.pressDesc {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  flex: 1;
+  margin: 0;
+}
+
+/* ── Press Contact ── */
+.pressContact {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.pressContactCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.pressContactCard h3 {
+  color: var(--color-gold);
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contactLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--color-white);
+}
+
+.pressKitCta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pressKitCta p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ── Bottom CTA ── */
+.bottomCta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: center;
+  background: var(--color-sand-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  border-left: 5px solid var(--color-forest);
+}
+
+.bottomCtaText h2 { margin-bottom: var(--space-sm); }
+.bottomCtaText p  {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.bottomCtaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 240px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .featuredCard     { grid-template-columns: 1fr; }
+  .featuredMedia    { min-height: 300px; }
+  .featuredImgPlaceholder { min-height: 300px; }
+  .pressContact     { grid-template-columns: 1fr; }
+  .pressGrid        { grid-template-columns: repeat(2, 1fr); }
+  .bottomCta        { grid-template-columns: 1fr; }
+  .bottomCtaButtons { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 800px) {
+  .secondaryFilmsGrid { grid-template-columns: 1fr; }
+  .pressGrid          { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .heroCta          { flex-direction: column; }
+  .featuredActions  { flex-direction: column; align-items: flex-start; }
+  .bottomCtaButtons { flex-direction: column; }
+  .pressContactCard { padding: var(--space-md); }
+}

@@ -1,0 +1,583 @@
+/* ============================================
+   IMPACT PAGE — CSS MODULE
+   ============================================ */
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-dark) 50%, var(--color-soil) 100%);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23ffffff' fill-opacity='0.025'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  max-width: 720px;
+}
+
+.heroTitle {
+  color: var(--color-white);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: var(--space-xs) 0 var(--space-xs);
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.45rem);
+  color: var(--color-gold);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.heroDesc {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* ── Stats Grid ── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.statCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 4px solid var(--color-gold);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.statNum {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--color-forest);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── Shingle Mountain Story ── */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.storyText p {
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-sm);
+}
+
+.storyText p:first-of-type {
+  color: var(--color-soil);
+}
+
+.storyText strong {
+  color: var(--color-forest);
+}
+
+/* Timeline */
+.timeline {
+  position: sticky;
+  top: 2rem;
+}
+
+.timelineTitle {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.25rem;
+}
+
+.timelineDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 2px solid var(--color-gold-dark);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timelineLine {
+  flex: 1;
+  width: 2px;
+  background: var(--color-gray-light);
+  margin-top: 4px;
+  min-height: 24px;
+}
+
+.timelineItem:last-child .timelineLine {
+  display: none;
+}
+
+/* Victory gets gold dot treatment */
+.marker_victory .timelineDot {
+  width: 18px;
+  height: 18px;
+  background: var(--color-gold);
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 3px rgba(212, 165, 52, 0.25);
+}
+
+.marker_start .timelineDot {
+  background: var(--color-gray);
+  border-color: var(--color-gray);
+}
+
+.marker_ongoing .timelineDot {
+  background: var(--color-sky);
+  border-color: var(--color-sky-light);
+}
+
+.timelineContent {
+  padding-bottom: var(--space-md);
+}
+
+.timelineYear {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin-bottom: 0.2rem;
+}
+
+.timelineEvent {
+  font-size: 0.95rem;
+  color: var(--color-forest);
+  font-family: var(--font-display);
+  margin-bottom: 0.35rem;
+}
+
+.timelineDesc {
+  font-size: 0.82rem;
+  color: var(--color-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Featured Wins ── */
+.winsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.winCard {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 3px solid var(--color-gold);
+}
+
+.winHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.winIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-forest);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.winTitle {
+  font-size: 1.1rem;
+  color: var(--color-forest);
+  line-height: 1.3;
+}
+
+.winDesc {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Quote ── */
+.quoteSection {
+  background: var(--color-forest);
+  position: relative;
+  overflow: hidden;
+}
+
+.quoteSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(212, 165, 52, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.quoteWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteDecor {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 0.7;
+  color: var(--color-gold);
+  opacity: 0.4;
+  margin-bottom: var(--space-sm);
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--color-white);
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0 0 var(--space-md);
+}
+
+.quoteSource {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-style: normal;
+}
+
+/* ── Awards & Recognition ── */
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.awardCard {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--color-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.awardCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.awardOrg {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.awardName {
+  font-size: 1rem;
+  color: var(--color-forest);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.awardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.awardRecipient {
+  font-size: 0.8rem;
+  color: var(--color-soil);
+  font-weight: 600;
+}
+
+.awardYear {
+  white-space: nowrap;
+}
+
+/* BET Feature */
+.mediaFeature {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.mediaFeatureImg {
+  position: relative;
+  height: 340px;
+}
+
+.playBtn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 42, 30, 0.4);
+  color: var(--color-white);
+  transition: background var(--transition-base);
+}
+
+.mediaFeatureImg:hover .playBtn {
+  background: rgba(15, 42, 30, 0.6);
+}
+
+.playBtn svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  width: 56px;
+  height: 56px;
+}
+
+.mediaFeatureText {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mediaFeatureText h3 {
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-top: 0.4rem;
+}
+
+.mediaFeatureText p {
+  font-size: 0.925rem;
+  color: var(--color-charcoal);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── CTA ── */
+.ctaSection {
+  background: var(--color-forest);
+}
+
+.ctaInner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.ctaText p {
+  color: rgba(255, 255, 255, 0.80);
+  margin-bottom: var(--space-xs);
+}
+
+.ctaText p:last-child {
+  margin-bottom: 0;
+}
+
+.ctaTitle {
+  color: var(--color-white);
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 200px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1100px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-2xl);
+  }
+
+  .winsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mediaFeature {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .timeline {
+    position: static;
+  }
+
+  .winsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awardsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mediaFeature {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaFeatureImg {
+    height: 260px;
+  }
+
+  .mediaFeatureText {
+    padding: var(--space-lg);
+  }
+
+  .ctaInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .ctaButtons {
+    flex-direction: row;
+    justify-content: center;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 55vh;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .winsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .awardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteText {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+}
+
+@media (max-width: 500px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaButtons a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quoteDecor {
+    font-size: 3rem;
+  }
+}

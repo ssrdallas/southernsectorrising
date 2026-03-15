@@ -1,0 +1,179 @@
+.widget {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 440px;
+  width: 100%;
+}
+
+/* ── Frequency ── */
+.frequency {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.freqBtn {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-gray);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.freqActive {
+  background: var(--color-forest);
+  color: var(--color-white);
+}
+
+/* ── Amount Tiers ── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.tier {
+  padding: 0.7rem 0.5rem;
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.tier:hover {
+  border-color: var(--color-forest);
+  color: var(--color-forest);
+}
+
+.tierActive {
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+  color: var(--color-white);
+}
+
+.tierCustom {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.5rem;
+  gap: 0.15rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.tierCustom.tierActive {
+  color: var(--color-white);
+}
+
+.customInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: inherit;
+  outline: none;
+  min-width: 0;
+}
+
+.customInput::placeholder {
+  font-weight: 400;
+  color: var(--color-gray);
+}
+
+/* ── Methods ── */
+.methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.methodLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-gray);
+  margin-bottom: 0.25rem;
+}
+
+.methodBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.methodBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.methodStripe {
+  background: var(--color-forest);
+  color: var(--color-white);
+}
+
+.methodStripe:not(:disabled):hover {
+  background: var(--color-forest-light);
+}
+
+.methodPaypal {
+  background: #FFC439;
+  color: #003087;
+  border-color: #FFC439;
+}
+
+.methodPaypal:not(:disabled):hover {
+  background: #f0b429;
+}
+
+/* ── Payment form ── */
+.paymentForm {
+  margin-bottom: var(--space-sm);
+}
+
+.back {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.back:hover { color: var(--color-forest); }
+
+/* ── Secure note ── */
+.secure {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--color-gray);
+  justify-content: center;
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
