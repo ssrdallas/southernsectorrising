@@ -342,6 +342,7 @@
 }
 
 .globalVisual {
+  position: relative;
   height: 420px;
   border-radius: var(--radius-xl);
   overflow: hidden;

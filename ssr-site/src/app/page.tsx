@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IconArrowDown } from '@/components/icons/SocialIcons';
 import styles from './page.module.css';
@@ -110,8 +111,12 @@ export default function HomePage() {
             </div>
             <div className={styles.founderCard}>
               <div className={styles.founderImg}>
-                {/* TODO: <Image src="/images/team/marsha-jackson.jpg" fill alt="Dr. Marsha Jackson" /> */}
-                <div className="img-placeholder">Dr. Marsha Jackson</div>
+                <Image
+                  src="/images/team/marsha-jackson.png"
+                  fill
+                  alt="Dr. Marsha Jackson, Founder & Executive Director"
+                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                />
               </div>
               <div className={styles.founderInfo}>
                 <h3>Dr. Marsha Jackson</h3>

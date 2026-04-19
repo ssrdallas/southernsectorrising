@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
 
@@ -93,8 +94,7 @@ export default function EventsPage() {
               <span className={styles.featuredYear}>2026</span>
             </div>
             <div className={styles.featuredImg}>
-              {/* TODO: replace with <Image src="/images/events/juneteenth-2026.jpg" fill alt="Juneteenth 2026" /> */}
-              <div className="img-placeholder">Juneteenth 2026</div>
+              <Image src="/images/events/juneteenth-2025.jpg" fill alt="Juneteenth celebration — Southern Sector Rising community event" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
             <div className={styles.featuredBody}>
               <div className={styles.featuredMeta}>

@@ -146,8 +146,10 @@
 }
 
 .founderImg {
+  position: relative;
   height: 280px;
   background: var(--color-forest-light);
+  overflow: hidden;
 }
 
 .founderInfo {

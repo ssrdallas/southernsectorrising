@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IconCheck, IconGlobe } from '@/components/icons/SocialIcons';
 import styles from './page.module.css';
@@ -8,6 +9,34 @@ export const metadata: Metadata = {
   description:
     'Born from injustice, built for justice. Learn the story of Southern Sector Rising, Dr. Marsha Jackson, and the Jemez Principles that guide our work.',
 };
+
+const BOARD_MEMBERS = [
+  {
+    name: 'Bonnie Mathias',
+    title: 'Board Member',
+    img: '/images/team/bonnie-mathias.webp',
+  },
+  {
+    name: 'Chelsi Floyd',
+    title: 'Board Member',
+    img: '/images/team/chelsi-floyd.webp',
+  },
+  {
+    name: 'Danielle Ayers',
+    title: 'Board Member',
+    img: '/images/team/danielle-ayers.webp',
+  },
+  {
+    name: 'Genaro Viniegra',
+    title: 'Board Member',
+    img: '/images/team/genaro-viniegra.webp',
+  },
+  {
+    name: 'Sara Mokuria',
+    title: 'Board Member',
+    img: '/images/team/sara-mokuria.webp',
+  },
+];
 
 const AWARDS = [
   { year: '2019', title: 'Sierra Club Environmentalist Award' },
@@ -85,12 +114,13 @@ export default function AboutPage() {
       {/* ── Page Hero ── */}
       <section className={styles.hero}>
         <div className={styles.heroOverlay} />
-        {/* TODO: replace with <Image src="/images/about/about-hero.jpg" fill alt="" priority /> */}
-        <div className={`${styles.heroContent} container`}>
+        <Image src="/images/hero/hero-about.jpg" fill alt="" priority style={{ objectFit: 'cover', objectPosition: 'center 40%' }} />
+        {/* Text commented out — hero image already carries text overlay from source */}
+        {/* <div className={`${styles.heroContent} container`}>
           <p className="eyebrow">Our Story</p>
           <h1 className={styles.heroTitle}>About Us</h1>
           <p className={styles.heroSubtitle}>Born from injustice. Built for justice.</p>
-        </div>
+        </div> */}
       </section>
 
       {/* ── Origin Story ── */}
@@ -138,12 +168,10 @@ export default function AboutPage() {
             </div>
             <div className={styles.originVisual}>
               <div className={styles.originImgTop}>
-                {/* TODO: replace with <Image src="/images/about/shingle-mountain.jpg" fill alt="Shingle Mountain in Floral Farms" /> */}
-                <div className="img-placeholder">Shingle Mountain — Floral Farms, 2019</div>
+                <Image src="/images/about/shingle-mountain.jpg" fill alt="Shingle Mountain — officials and residents atop the toxic shingle pile in Floral Farms" style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
               </div>
               <div className={styles.originImgBottom}>
-                {/* TODO: replace with <Image src="/images/about/after-removal.jpg" fill alt="Site after shingle mountain removal" /> */}
-                <div className="img-placeholder">Site After Removal — 2022</div>
+                <Image src="/images/about/after-removal.jpg" fill alt="Floral Farms resident at the site during shingle mountain removal, 2021" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
               <div className={styles.originStat}>
                 <span className={styles.originStatNum}>200,000+</span>
@@ -163,8 +191,13 @@ export default function AboutPage() {
           </div>
           <div className={styles.leaderGrid}>
             <div className={styles.leaderPhoto}>
-              {/* TODO: replace with <Image src="/images/team/marsha-jackson-portrait.jpg" fill alt="Dr. Marsha Jackson, Founder & Executive Director of Southern Sector Rising" /> */}
-              <div className="img-placeholder">Dr. Marsha Jackson</div>
+              <Image
+                src="/images/team/marsha-jackson-portrait.webp"
+                fill
+                alt="Dr. Marsha Jackson, Founder & Executive Director of Southern Sector Rising"
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
+                priority
+              />
               <div className={styles.leaderPhotoCaption}>
                 Founder &amp; Executive Director
               </div>
@@ -217,6 +250,29 @@ export default function AboutPage() {
                 <cite>— Dr. Marsha Jackson, Founder &amp; Executive Director</cite>
               </blockquote>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Board of Directors ── */}
+      <section className="section section--white">
+        <div className="container">
+          <div className="section-header">
+            <p className="eyebrow">Our Team</p>
+            <h2 className="section-title">Board of Directors</h2>
+          </div>
+          <div className={styles.boardGrid}>
+            {BOARD_MEMBERS.map(({ name, title, img }) => (
+              <div key={name} className={styles.boardCard}>
+                <div className={styles.boardPhoto}>
+                  <Image src={img} fill alt={name} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                </div>
+                <div className={styles.boardInfo}>
+                  <h3 className={styles.boardName}>{name}</h3>
+                  <p className={styles.boardTitle}>{title}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

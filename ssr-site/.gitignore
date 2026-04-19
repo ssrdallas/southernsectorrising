@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local image dump (not for repo)
+../img_src/
+
 # Environment secrets
 .env.local
 .env.*.local

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IconCheck, IconPin, IconGlobe } from '@/components/icons/SocialIcons';
+import PhotoGallery from '@/components/sections/PhotoGallery';
+import GALLERY_ITEMS from '@/data/galleryImages';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -327,10 +330,23 @@ export default function OurWorkPage() {
               </div>
             </div>
             <div className={styles.globalVisual}>
-              {/* TODO: replace with <Image src="/images/global/delegation-kenya.jpg" fill alt="SSR delegation in Kenya" /> */}
-              <div className="img-placeholder">SSR International Delegation</div>
+              <Image src="/images/global/delegation-kenya.jpg" fill alt="SSR international delegation — Taproot Earth climate justice convening, Kenya" style={{ objectFit: 'cover' }} />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Photo Gallery ── */}
+      <section className="section section--cream">
+        <div className="container">
+          <div className="section-header">
+            <p className="eyebrow">In the Field</p>
+            <h2 className="section-title">Photo Gallery</h2>
+            <p className="section-desc">
+              From Kenya to Rome to the streets of South Dallas — moments from SSR&rsquo;s work around the world.
+            </p>
+          </div>
+          <PhotoGallery items={GALLERY_ITEMS} />
         </div>
       </section>
 

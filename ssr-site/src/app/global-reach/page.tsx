@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IconGlobe, IconPin, IconCheck, IconMail } from '@/components/icons/SocialIcons';
 import styles from './page.module.css';
@@ -53,7 +54,8 @@ const DELEGATIONS = [
       'Cross-continental environmental racism dialogue',
       'Building international EJ advocacy networks',
     ],
-    imgLabel: 'Dr. Marsha Jackson — Kenya Delegation',
+    img: '/images/global/delegation-kenya.jpg',
+    imgAlt: 'Taproot Earth climate justice convening — Kenya delegation',
   },
   {
     country: 'Rome, Italy',
@@ -67,7 +69,8 @@ const DELEGATIONS = [
       'Amplifying Southern Dallas on the world stage',
       'Faith and justice coalitions',
     ],
-    imgLabel: 'Dr. Marsha Jackson — Rome, Italy',
+    img: '/images/global/delegation-rome.jpg',
+    imgAlt: 'SSR delegation gathering — Rome, Italy',
   },
 ];
 
@@ -168,11 +171,10 @@ export default function GlobalReachPage() {
           </blockquote>
 
           <div className={styles.delegationsGrid}>
-            {DELEGATIONS.map(({ country, badge, tagClass, title, desc, highlights, imgLabel }) => (
+            {DELEGATIONS.map(({ country, badge, tagClass, title, desc, highlights, img, imgAlt }) => (
               <article key={country} className={`card ${styles.delegationCard}`}>
                 <div className={styles.delegationImg}>
-                  {/* TODO: replace with <Image ... /> */}
-                  <div className="img-placeholder">{imgLabel}</div>
+                  <Image src={img} fill alt={imgAlt} style={{ objectFit: 'cover' }} />
                   <span className={`tag ${tagClass} ${styles.delegationBadge}`}>{badge}</span>
                 </div>
                 <div className={styles.delegationBody}>
