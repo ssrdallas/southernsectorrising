@@ -4,8 +4,9 @@
 <body>
 
 <!-- contact form -->
-<form name="contact" data-netlify="true" hidden>
+<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="bot-field" />
   <input type="text" name="name" />
   <input type="email" name="email" />
   <input type="tel" name="phone" />
@@ -14,8 +15,9 @@
 </form>
 
 <!-- volunteer-signup form -->
-<form name="volunteer-signup" data-netlify="true" hidden>
+<form name="volunteer-signup" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="volunteer-signup" />
+  <input type="hidden" name="bot-field" />
   <input type="text" name="first_name" />
   <input type="text" name="last_name" />
   <input type="email" name="email" />
@@ -27,8 +29,9 @@
 </form>
 
 <!-- tour-request form -->
-<form name="tour-request" data-netlify="true" hidden>
+<form name="tour-request" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="tour-request" />
+  <input type="hidden" name="bot-field" />
   <input type="text" name="name" />
   <input type="text" name="organization" />
   <input type="email" name="email" />
@@ -39,15 +42,17 @@
 </form>
 
 <!-- events-signup form -->
-<form name="events-signup" data-netlify="true" hidden>
+<form name="events-signup" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="events-signup" />
+  <input type="hidden" name="bot-field" />
   <input type="text" name="name" />
   <input type="email" name="email" />
 </form>
 
 <!-- newsletter form -->
-<form name="newsletter" data-netlify="true" hidden>
+<form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="newsletter" />
+  <input type="hidden" name="bot-field" />
   <input type="email" name="email" />
 </form>
 
