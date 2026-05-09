@@ -83,9 +83,11 @@ export default function Footer() {
                 name="newsletter"
                 method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className={styles.newsletterForm}
               >
                 <input type="hidden" name="form-name" value="newsletter" />
+                <input type="hidden" name="bot-field" style={{ display: 'none' }} />
                 <input type="email" name="email" placeholder="Your email address" required />
                 <button type="submit" className="btn btn--gold btn--sm">Subscribe</button>
               </form>

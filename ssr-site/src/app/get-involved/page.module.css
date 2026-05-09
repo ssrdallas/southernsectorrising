@@ -310,14 +310,9 @@
 
 /* ── Donate Widget ── */
 .donateWidget {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-md);
-  border-top: 5px solid var(--color-gold);
+  min-width: 0;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  justify-content: center;
 }
 
 /* Frequency toggle */
@@ -485,7 +480,7 @@
   }
 
   .donateWidget {
-    padding: var(--space-md);
+    justify-content: stretch;
   }
 }
 

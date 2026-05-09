@@ -155,9 +155,11 @@ export default function GetInvolvedPage() {
                 name="volunteer-signup"
                 method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className={styles.form}
               >
                 <input type="hidden" name="form-name" value="volunteer-signup" />
+                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
                 <div className={styles.formRow2}>
                   <div className={styles.formGroup}>
                     <label htmlFor="vol-first">First Name <span aria-hidden="true">*</span></label>
@@ -279,42 +281,10 @@ export default function GetInvolvedPage() {
                 ))}
               </ul>
               <p className={styles.secureNote}>
-                🔒 Secure donation powered by Stripe &amp; PayPal
+                🔒 Secure donation powered by Stripe
               </p>
             </div>
             <div className={styles.donateWidget}>
-              {/* ── Frequency Toggle ── */}
-              <div className={styles.frequencyToggle} role="group" aria-label="Donation frequency">
-                <button
-                  type="button"
-                  className={`${styles.toggleBtn} ${styles.toggleBtnActive}`}
-                  aria-pressed="true"
-                >
-                  One-time
-                </button>
-                <button
-                  type="button"
-                  className={styles.toggleBtn}
-                  aria-pressed="false"
-                >
-                  Monthly
-                </button>
-              </div>
-
-              {/* ── Tier Buttons ── */}
-              <div className={styles.tierGrid}>
-                {DONATION_TIERS.map((tier, i) => (
-                  <button
-                    key={tier}
-                    type="button"
-                    className={`${styles.tierBtn} ${i === 2 ? styles.tierBtnActive : ''}`}
-                    aria-pressed={i === 2}
-                  >
-                    {tier}
-                  </button>
-                ))}
-              </div>
-
               <DonateWidget />
             </div>
           </div>
@@ -357,9 +327,11 @@ export default function GetInvolvedPage() {
                 name="tour-request"
                 method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className={styles.form}
               >
                 <input type="hidden" name="form-name" value="tour-request" />
+                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
                 <div className={styles.formGroup}>
                   <label htmlFor="tour-name">Full Name <span aria-hidden="true">*</span></label>
                   <input

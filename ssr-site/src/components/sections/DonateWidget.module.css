@@ -96,6 +96,49 @@
   color: var(--color-gray);
 }
 
+/* ── Proceed button ── */
+.proceedBtn {
+  width: 100%;
+  margin-bottom: var(--space-sm);
+}
+
+.proceedBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Loading state ── */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl) 0;
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+.spinner {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-gray-light);
+  border-top-color: var(--color-forest);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error ── */
+.error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-bottom: var(--space-sm);
+}
+
 /* ── Methods ── */
 .methods {
   display: flex;

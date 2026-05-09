@@ -90,7 +90,7 @@ export default function EventsPage() {
           <article className={styles.featuredCard}>
             <div className={styles.featuredDate}>
               <span className={styles.featuredMonth}>June</span>
-              <span className={styles.featuredDay}>19</span>
+              <span className={styles.featuredDay}>20</span>
               <span className={styles.featuredYear}>2026</span>
             </div>
             <div className={styles.featuredImg}>
@@ -206,9 +206,11 @@ export default function EventsPage() {
                 name="events-signup"
                 method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className={styles.signupForm}
               >
                 <input type="hidden" name="form-name" value="events-signup" />
+                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
                     <label htmlFor="signup-name">Full Name</label>

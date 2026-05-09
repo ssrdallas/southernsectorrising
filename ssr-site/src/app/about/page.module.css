@@ -112,6 +112,15 @@
   line-height: 1.4;
 }
 
+/* ── Origin video ── */
+.originVideo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
 /* ── Leadership ── */
 .leaderGrid {
   display: grid;
@@ -236,12 +245,14 @@
 
 /* ── Board of Directors ── */
 .boardGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-lg);
 }
 
 .boardCard {
+  flex: 0 0 calc((100% - 4 * var(--space-lg)) / 5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -396,8 +407,8 @@
    RESPONSIVE
    ============================================ */
 @media (max-width: 1100px) {
-  .boardGrid {
-    grid-template-columns: repeat(3, 1fr);
+  .boardGrid .boardCard {
+    flex-basis: calc((100% - 2 * var(--space-lg)) / 3);
   }
 
   .leaderGrid {
@@ -475,8 +486,8 @@
 }
 
 @media (max-width: 768px) {
-  .boardGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .boardGrid .boardCard {
+    flex-basis: calc((100% - var(--space-lg)) / 2);
   }
 
   .hero {

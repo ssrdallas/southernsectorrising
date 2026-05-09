@@ -301,6 +301,29 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* ── EJ Symposium Video ── */}
+      <section className="section section--cream">
+        <div className="container">
+          <div className="section-header">
+            <p className="eyebrow">In Action</p>
+            <h2 className="section-title">Environmental Justice Symposium 2022</h2>
+            <p className="section-desc">
+              Watch Southern Sector Rising in action — community voices, frontline leadership,
+              and the organizing work that drives real change in South Dallas.
+            </p>
+          </div>
+          <div className={styles.videoEmbed}>
+            <iframe
+              src="https://www.youtube.com/embed/xi025eH5DMU"
+              title="Environmental Justice Symposium 2022 — Southern Sector Rising"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Quote ── */}
       <section className={`section ${styles.quoteSection}`}>
         <div className="container">
@@ -344,11 +367,13 @@ export default function ImpactPage() {
           {/* BET Feature */}
           <div className={styles.mediaFeature}>
             <div className={styles.mediaFeatureImg}>
-              {/* TODO: replace with <Image src="/images/media/bet-documentary.jpg" fill alt="BET Disrupt & Dismantle documentary featuring SSR" /> */}
-              <div className="img-placeholder">BET Disrupt &amp; Dismantle Documentary</div>
-              <div className={styles.playBtn} aria-hidden="true">
-                <IconPlay size={32} />
-              </div>
+              <iframe
+                src="https://www.youtube.com/embed/DZdpZe5f9ys"
+                title="Disrupt & Dismantle with Soledad O'Brien — BET Documentary"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
             </div>
             <div className={styles.mediaFeatureText}>
               <span className="tag tag--forest">National Media</span>

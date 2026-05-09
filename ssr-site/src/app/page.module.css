@@ -221,6 +221,7 @@
 .projectCard { display: flex; flex-direction: column; }
 
 .projectImg {
+  position: relative;
   height: 220px;
   overflow: hidden;
 }

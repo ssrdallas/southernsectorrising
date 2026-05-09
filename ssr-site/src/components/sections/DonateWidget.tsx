@@ -2,25 +2,27 @@
 
 import { useState } from 'react';
 import StripeForm from './StripeForm';
-import PayPalButton from './PayPalButton';
 import { IconShield } from '@/components/icons/SocialIcons';
 import styles from './DonateWidget.module.css';
 
 const TIERS = [25, 50, 100, 250, 500];
 
 type Frequency = 'once' | 'monthly';
+type Step = 'select' | 'loading' | 'pay';
 
 export default function DonateWidget() {
-  const [selected, setSelected]   = useState<number>(100);
-  const [custom, setCustom]       = useState('');
+  const [selected,  setSelected]  = useState<number>(100);
+  const [custom,    setCustom]    = useState('');
   const [frequency, setFrequency] = useState<Frequency>('once');
-  const [method, setMethod]       = useState<'stripe' | 'paypal' | null>(null);
+  const [step,      setStep]      = useState<Step>('select');
+  const [secret,    setSecret]    = useState('');
+  const [error,     setError]     = useState('');
 
   const amount = custom ? parseFloat(custom) : selected;
+  const valid  = amount >= 1;
 
   function handleCustom(val: string) {
-    const clean = val.replace(/[^0-9.]/g, '');
-    setCustom(clean);
+    setCustom(val.replace(/[^0-9.]/g, ''));
     setSelected(0);
   }
 
@@ -29,87 +31,106 @@ export default function DonateWidget() {
     setCustom('');
   }
 
+  async function handleProceed() {
+    if (!valid) return;
+    setStep('loading');
+    setError('');
+    try {
+      const res = await fetch('/api/donate/stripe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount, frequency }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+      setSecret(data.clientSecret);
+      setStep('pay');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setStep('select');
+    }
+  }
+
+  function handleBack() {
+    setStep('select');
+    setSecret('');
+    setError('');
+  }
+
   return (
     <div className={styles.widget}>
-      {/* Frequency toggle */}
-      <div className={styles.frequency}>
-        {(['once', 'monthly'] as Frequency[]).map((f) => (
-          <button
-            key={f}
-            className={`${styles.freqBtn} ${frequency === f ? styles.freqActive : ''}`}
-            onClick={() => setFrequency(f)}
-          >
-            {f === 'once' ? 'One-time' : 'Monthly'}
-          </button>
-        ))}
-      </div>
+      {step === 'select' && (
+        <>
+          {/* Frequency toggle */}
+          <div className={styles.frequency}>
+            {(['once', 'monthly'] as Frequency[]).map((f) => (
+              <button
+                key={f}
+                className={`${styles.freqBtn} ${frequency === f ? styles.freqActive : ''}`}
+                onClick={() => setFrequency(f)}
+              >
+                {f === 'once' ? 'One-time' : 'Monthly'}
+              </button>
+            ))}
+          </div>
 
-      {/* Amount tiers */}
-      <div className={styles.tiers}>
-        {TIERS.map((t) => (
-          <button
-            key={t}
-            className={`${styles.tier} ${selected === t && !custom ? styles.tierActive : ''}`}
-            onClick={() => handleTier(t)}
-          >
-            ${t}
-          </button>
-        ))}
-        <div className={`${styles.tier} ${styles.tierCustom} ${custom ? styles.tierActive : ''}`}>
-          <span>$</span>
-          <input
-            type="text"
-            inputMode="decimal"
-            placeholder="Other"
-            value={custom}
-            onChange={(e) => handleCustom(e.target.value)}
-            className={styles.customInput}
-            aria-label="Custom donation amount"
-          />
-        </div>
-      </div>
+          {/* Amount tiers */}
+          <div className={styles.tiers}>
+            {TIERS.map((t) => (
+              <button
+                key={t}
+                className={`${styles.tier} ${selected === t && !custom ? styles.tierActive : ''}`}
+                onClick={() => handleTier(t)}
+              >
+                ${t}
+              </button>
+            ))}
+            <div className={`${styles.tier} ${styles.tierCustom} ${custom ? styles.tierActive : ''}`}>
+              <span>$</span>
+              <input
+                type="text"
+                inputMode="decimal"
+                placeholder="Other"
+                value={custom}
+                onChange={(e) => handleCustom(e.target.value)}
+                className={styles.customInput}
+                aria-label="Custom donation amount"
+              />
+            </div>
+          </div>
 
-      {/* Payment method selection */}
-      {!method && (
-        <div className={styles.methods}>
-          <p className={styles.methodLabel}>Choose payment method</p>
+          {error && <p className={styles.error}>{error}</p>}
+
           <button
-            className={`${styles.methodBtn} ${styles.methodStripe}`}
-            onClick={() => setMethod('stripe')}
-            disabled={!amount || amount < 1}
+            className={`btn btn--gold btn--lg ${styles.proceedBtn}`}
+            onClick={handleProceed}
+            disabled={!valid}
           >
-            Pay with Card
+            Donate ${valid ? amount.toFixed(2) : '—'}{frequency === 'monthly' ? '/mo' : ''}
           </button>
-          <button
-            className={`${styles.methodBtn} ${styles.methodPaypal}`}
-            onClick={() => setMethod('paypal')}
-            disabled={!amount || amount < 1}
-          >
-            Pay with PayPal
-          </button>
+        </>
+      )}
+
+      {step === 'loading' && (
+        <div className={styles.loading}>
+          <span className={styles.spinner} />
+          <p>Preparing secure checkout…</p>
         </div>
       )}
 
-      {/* Stripe form */}
-      {method === 'stripe' && (
-        <div className={styles.paymentForm}>
-          <button className={styles.back} onClick={() => setMethod(null)}>← Back</button>
-          <StripeForm amount={amount} frequency={frequency} />
-        </div>
-      )}
-
-      {/* PayPal button */}
-      {method === 'paypal' && (
-        <div className={styles.paymentForm}>
-          <button className={styles.back} onClick={() => setMethod(null)}>← Back</button>
-          <PayPalButton amount={amount} frequency={frequency} />
-        </div>
+      {step === 'pay' && secret && (
+        <StripeForm
+          amount={amount}
+          frequency={frequency}
+          clientSecret={secret}
+          onBack={handleBack}
+        />
       )}
 
       {/* Security note */}
       <p className={styles.secure}>
         <IconShield size={14} />
-        Secure donation · 256-bit encryption
+        Secure &amp; encrypted · Powered by Stripe
       </p>
     </div>
   );

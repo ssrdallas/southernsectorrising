@@ -4,38 +4,41 @@ import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import {
   Elements,
-  CardElement,
+  PaymentElement,
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
 import styles from './StripeForm.module.css';
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? ''
-);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? '');
 
-const CARD_STYLE = {
-  style: {
-    base: {
-      fontSize: '16px',
-      color: '#2C2C2C',
-      fontFamily: 'Inter, sans-serif',
-      '::placeholder': { color: '#6B6B6B' },
-    },
-    invalid: { color: '#e53e3e' },
+const appearance = {
+  theme: 'stripe' as const,
+  variables: {
+    colorPrimary: '#1B4332',
+    colorBackground: '#ffffff',
+    colorText: '#2C2C2C',
+    colorDanger: '#e53e3e',
+    fontFamily: 'Inter, sans-serif',
+    borderRadius: '8px',
+    spacingUnit: '5px',
+  },
+  rules: {
+    '.Label': { color: '#2C2C2C', fontWeight: '600', fontSize: '0.875rem' },
+    '.Input': { border: '1.5px solid #D1D5DB', boxShadow: 'none' },
+    '.Input:focus': { border: '1.5px solid #1B4332', boxShadow: '0 0 0 3px rgba(27,67,50,0.12)' },
   },
 };
 
-interface Props {
+interface CheckoutFormProps {
   amount: number;
   frequency: 'once' | 'monthly';
+  onBack: () => void;
 }
 
-function CheckoutForm({ amount, frequency }: Props) {
+function CheckoutForm({ amount, frequency, onBack }: CheckoutFormProps) {
   const stripe   = useStripe();
   const elements = useElements();
-  const [name,    setName]    = useState('');
-  const [email,   setEmail]   = useState('');
   const [loading, setLoading] = useState(false);
   const [error,   setError]   = useState('');
   const [success, setSuccess] = useState(false);
@@ -43,35 +46,24 @@ function CheckoutForm({ amount, frequency }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!stripe || !elements) return;
-
     setLoading(true);
     setError('');
 
-    try {
-      const res = await fetch('/api/donate/stripe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount, frequency, name, email }),
-      });
+    const result = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: `${window.location.origin}/get-involved?donated=true`,
+      },
+      redirect: 'if_required',
+    });
 
-      const { clientSecret, error: apiError } = await res.json();
-      if (apiError) throw new Error(apiError);
-
-      const result = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement)!,
-          billing_details: { name, email },
-        },
-      });
-
-      if (result.error) {
-        setError(result.error.message ?? 'Payment failed. Please try again.');
-      } else {
-        setSuccess(true);
-      }
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Something went wrong.');
-    } finally {
+    if (result.error) {
+      setError(result.error.message ?? 'Payment failed. Please try again.');
+      setLoading(false);
+    } else if (result.paymentIntent?.status === 'succeeded' || result.paymentIntent?.status === 'processing') {
+      setSuccess(true);
+    } else {
+      setError(`Unexpected payment status: ${result.paymentIntent?.status ?? 'unknown'}. Please try again or contact us.`);
       setLoading(false);
     }
   }
@@ -79,9 +71,12 @@ function CheckoutForm({ amount, frequency }: Props) {
   if (success) {
     return (
       <div className={styles.success}>
-        <p className={styles.successIcon}>✓</p>
-        <h3>Thank you for your donation!</h3>
-        <p>Your ${amount.toFixed(2)} {frequency === 'monthly' ? 'monthly ' : ''}gift helps frontline communities fight for environmental justice.</p>
+        <span className={styles.successIcon}>✓</span>
+        <h3 className={styles.successTitle}>Thank you!</h3>
+        <p>
+          Your <strong>${amount.toFixed(2)}{frequency === 'monthly' ? '/month' : ''}</strong> gift
+          helps frontline communities fight for environmental justice.
+        </p>
       </div>
     );
   }
@@ -93,36 +88,7 @@ function CheckoutForm({ amount, frequency }: Props) {
         {frequency === 'monthly' ? ' / month' : ' one-time'}
       </p>
 
-      <div className={styles.field}>
-        <label htmlFor="donor-name">Full Name</label>
-        <input
-          id="donor-name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          placeholder="Jane Smith"
-        />
-      </div>
-
-      <div className={styles.field}>
-        <label htmlFor="donor-email">Email</label>
-        <input
-          id="donor-email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          placeholder="jane@example.com"
-        />
-      </div>
-
-      <div className={styles.field}>
-        <label>Card Details</label>
-        <div className={styles.cardWrapper}>
-          <CardElement options={CARD_STYLE} />
-        </div>
-      </div>
+      <PaymentElement />
 
       {error && <p className={styles.error}>{error}</p>}
 
@@ -133,14 +99,25 @@ function CheckoutForm({ amount, frequency }: Props) {
       >
         {loading ? 'Processing…' : `Donate $${amount.toFixed(2)}${frequency === 'monthly' ? '/mo' : ''}`}
       </button>
+
+      <button type="button" className={styles.back} onClick={onBack}>
+        ← Change amount
+      </button>
     </form>
   );
 }
 
-export default function StripeForm({ amount, frequency }: Props) {
+interface Props {
+  amount: number;
+  frequency: 'once' | 'monthly';
+  clientSecret: string;
+  onBack: () => void;
+}
+
+export default function StripeForm({ amount, frequency, clientSecret, onBack }: Props) {
   return (
-    <Elements stripe={stripePromise}>
-      <CheckoutForm amount={amount} frequency={frequency} />
+    <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
+      <CheckoutForm amount={amount} frequency={frequency} onBack={onBack} />
     </Elements>
   );
 }

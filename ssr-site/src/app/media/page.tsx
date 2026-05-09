@@ -103,15 +103,13 @@ export default function MediaPage() {
           {/* BET — Primary Featured Card */}
           <div className={styles.featuredCard}>
             <div className={styles.featuredMedia}>
-              {/* TODO: replace with <Image src="/images/media/bet-documentary.jpg" fill alt="BET Disrupt & Dismantle" /> */}
-              <div className={`img-placeholder ${styles.featuredImgPlaceholder}`}>
-                BET Documentary — Disrupt &amp; Dismantle
-              </div>
-              <div className={styles.featuredOverlay}>
-                <button className={styles.playBtn} aria-label="Play BET documentary">
-                  <IconPlay size={32} />
-                </button>
-              </div>
+              <iframe
+                src="https://www.youtube.com/embed/DZdpZe5f9ys"
+                title="Disrupt & Dismantle with Soledad O'Brien — BET Documentary"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
               <span className={`tag tag--sky ${styles.sourceBadge}`}>BET</span>
             </div>
             <div className={styles.featuredBody}>
@@ -150,56 +148,128 @@ export default function MediaPage() {
             </div>
           </div>
 
-          {/* Marsha Moves Mountains */}
+          {/* Secondary Films Grid */}
           <div className={styles.secondaryFilmsGrid}>
             <div className={`card ${styles.filmCard}`}>
               <div className={styles.filmCardMedia}>
-                {/* TODO: replace with <Image src="/images/media/marsha-moves-mountains.jpg" fill alt="Marsha Moves Mountains documentary" /> */}
-                <div className={`img-placeholder ${styles.filmImgPlaceholder}`}>
-                  Marsha Moves Mountains — Documentary
-                </div>
-                <div className={styles.filmOverlay}>
-                  <button className={styles.playBtnSm} aria-label="Play Marsha Moves Mountains">
-                    <IconPlay size={22} />
-                  </button>
-                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/dNhlB9EEysY"
+                  title="Environmental Justice -vs- Shingle Mountain"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                />
                 <span className={`tag tag--gold ${styles.filmSourceBadge}`}>Documentary</span>
               </div>
               <div className={styles.filmCardBody}>
-                <h3>Marsha Moves Mountains</h3>
+                <h3>Environmental Justice -vs- Shingle Mountain</h3>
                 <p>
-                  A documentary portrait of Dr. Marsha Jackson and the community movement
-                  that transformed a toxic dumping site into a symbol of grassroots power
-                  and environmental victory.
+                  A documentary portrait of Dr. Marsha Jackson and the years-long community
+                  battle against the illegal shingle dump — a symbol of environmental racism
+                  in Southern Dallas.
                 </p>
-                <a href="#" className="link-arrow">Watch film</a>
+                <a
+                  href="https://www.youtube.com/watch?v=dNhlB9EEysY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-arrow"
+                >Watch on YouTube</a>
               </div>
             </div>
 
             <div className={`card ${styles.filmCard}`}>
               <div className={styles.filmCardMedia}>
-                {/* TODO: replace with <Image src="/images/media/kera-documentary.jpg" fill alt="KERA Environmental Justice documentary" /> */}
-                <div className={`img-placeholder ${styles.filmImgPlaceholder}`}>
-                  KERA — Environmental Justice in South Dallas
-                </div>
-                <div className={styles.filmOverlay}>
-                  <button className={styles.playBtnSm} aria-label="Play KERA documentary">
-                    <IconPlay size={22} />
-                  </button>
-                </div>
-                <span className={`tag tag--forest ${styles.filmSourceBadge}`}>KERA / PBS</span>
+                <iframe
+                  src="https://www.youtube.com/embed/mjc7CIi_ujc"
+                  title="In Texas, These Residents Are Dying To Breathe Clean Air"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                />
+                <span className={`tag tag--sky ${styles.filmSourceBadge}`}>Investigative</span>
               </div>
               <div className={styles.filmCardBody}>
-                <h3>Environmental Justice in South Dallas</h3>
+                <h3>In Texas, Residents Are Dying to Breathe Clean Air</h3>
                 <p>
-                  KERA (Dallas PBS) documentary examining the environmental justice crisis in
-                  the Southern Sector — from Shingle Mountain to Sandbranch, featuring
-                  community voices and Dr. Jackson&rsquo;s leadership.
+                  National investigative coverage of the health crisis facing residents of
+                  the Southern Sector — documenting the direct human cost of racist zoning
+                  and illegal toxic dumping.
                 </p>
-                <a href="https://www.kera.org" target="_blank" rel="noopener noreferrer" className="link-arrow">
-                  Watch on KERA
-                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=mjc7CIi_ujc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-arrow"
+                >Watch on YouTube</a>
               </div>
+            </div>
+
+            <div className={`card ${styles.filmCard}`}>
+              <div className={styles.filmCardMedia}>
+                <iframe
+                  src="https://www.youtube.com/embed/5QmhmBOAwwE"
+                  title="Toxic Shingle Mountain — Blue Star Recycling's Environmental Crisis"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                />
+                <span className={`tag tag--forest ${styles.filmSourceBadge}`}>2019</span>
+              </div>
+              <div className={styles.filmCardBody}>
+                <h3>Toxic Shingle Mountain: Blue Star Recycling&rsquo;s Crisis</h3>
+                <p>
+                  The original 2019 reporting that brought the Shingle Mountain crisis to
+                  light — exposing how Blue Star Recycling created a toxic mountain of
+                  asphalt shingles next to a South Dallas neighborhood.
+                </p>
+                <a
+                  href="https://www.youtube.com/watch?v=5QmhmBOAwwE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-arrow"
+                >Watch on YouTube</a>
+              </div>
+            </div>
+
+            <div className={`card ${styles.filmCard}`}>
+              <div className={styles.filmCardMedia}>
+                <iframe
+                  src="https://www.youtube.com/embed/-pRsbiZcL-o"
+                  title="Shingle Mountain Removal Begins"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                />
+                <span className={`tag tag--gold ${styles.filmSourceBadge}`}>Victory</span>
+              </div>
+              <div className={styles.filmCardBody}>
+                <h3>Shingle Mountain Removal Begins</h3>
+                <p>
+                  Workers begin removing the shingles that accumulated over three years —
+                  marking the start of the community victory Dr. Jackson and Floral Farms
+                  residents fought years to achieve.
+                </p>
+                <a
+                  href="https://www.youtube.com/watch?v=-pRsbiZcL-o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-arrow"
+                >Watch on YouTube</a>
+              </div>
+            </div>
+          </div>
+          {/* EJ Symposium 2022 */}
+          <div className={styles.ejSymposiumWrap}>
+            <p className={styles.ejSymposiumLabel}>Community Programming</p>
+            <h3 className={styles.ejSymposiumTitle}>Environmental Justice Symposium 2022</h3>
+            <div className={styles.ejSymposiumVideo}>
+              <iframe
+                src="https://www.youtube.com/embed/xi025eH5DMU"
+                title="Environmental Justice Symposium 2022 — Southern Sector Rising"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
             </div>
           </div>
         </div>

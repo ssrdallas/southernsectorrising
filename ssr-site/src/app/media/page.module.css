@@ -12,6 +12,38 @@
   color: var(--color-white);
 }
 
+/* ── EJ Symposium embed ── */
+.ejSymposiumWrap {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.ejSymposiumLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin: 0 0 0.4rem;
+}
+
+.ejSymposiumTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-forest);
+  margin: 0 0 var(--space-md);
+}
+
+.ejSymposiumVideo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
 .heroBg {
   position: absolute;
   inset: 0;

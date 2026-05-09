@@ -296,6 +296,29 @@
   color: var(--color-gray);
 }
 
+/* ── Secondary video embed in project content ── */
+.projectVideo2Wrap {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.projectVideo2Label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  margin: 0 0 0.5rem;
+}
+
+.projectVideo2 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
 /* ── Global Section ── */
 .globalSection {
   background: var(--color-forest);
@@ -348,6 +371,15 @@
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Project video embed ── */
+.projectVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* ── CTA ── */

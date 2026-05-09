@@ -280,48 +280,57 @@ a.infoDetail:hover {
   color: var(--color-forest-light);
 }
 
-/* ── Map Placeholder ── */
-.mapPlaceholder {
-  background: var(--color-forest-light);
+/* ── Map ── */
+.mapWrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
   border-radius: var(--radius-xl);
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  /* Subtle topographic pattern suggestion */
-  background-image:
-    radial-gradient(circle at 20% 80%, rgba(27, 67, 50, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(212, 165, 52, 0.15) 0%, transparent 40%);
+  box-shadow: var(--shadow-lg);
 }
 
-.mapInner {
-  text-align: center;
+.mapIframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mapCard {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1.125rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  padding: var(--space-xl);
+  align-items: flex-start;
+  gap: 0.625rem;
+  box-shadow: var(--shadow-md);
+  max-width: 300px;
+  pointer-events: none;
 }
 
-.mapPin {
+.mapCardPin {
   color: var(--color-gold);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.mapLabel {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--color-white);
-  margin: 0;
+.mapCardTitle {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-forest);
+  margin-bottom: 0.25rem;
 }
 
-.mapSub {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+.mapCardSub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
   margin: 0;
-  max-width: 400px;
+  line-height: 1.4;
 }
 
 /* ── Responsive ── */
@@ -354,8 +363,8 @@ a.infoDetail:hover {
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .mapPlaceholder {
-    min-height: 220px;
+  .mapWrap {
+    height: 320px;
   }
 }
 
@@ -364,7 +373,13 @@ a.infoDetail:hover {
     font-size: 0.95rem;
   }
 
-  .mapLabel {
-    font-size: 1.2rem;
+  .mapWrap {
+    height: 260px;
+  }
+
+  .mapCard {
+    left: 1rem;
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
   }
 }

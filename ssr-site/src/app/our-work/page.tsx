@@ -3,8 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IconCheck, IconPin, IconGlobe } from '@/components/icons/SocialIcons';
 import PhotoGallery from '@/components/sections/PhotoGallery';
+import ProjectSlideshow from '@/components/sections/ProjectSlideshow';
 import GALLERY_ITEMS from '@/data/galleryImages';
 import styles from './page.module.css';
+
+const SANDBRANCH_IMAGES = [
+  'IMG_5202','IMG_5203','IMG_5204','IMG_5205','IMG_5206',
+  'IMG_5207','IMG_5210','IMG_8621','IMG_8625','IMG_8635',
+  'IMG_8638','IMG_8639','IMG_8648',
+].map(name => ({ src: `/images/projects/sandbranch/${name}.jpg`, alt: 'Sandbranch community — water access project' }));
 
 export const metadata: Metadata = {
   title: 'Our Work',
@@ -114,7 +121,12 @@ const PROJECTS = [
       { num: '2022', label: 'Victory year' },
       { num: '3 years', label: 'Campaign length' },
     ],
-    img: 'Park for Floral Farms — Rendering',
+    img: undefined,
+    slideshow: false,
+    videoId: 'AnPePP0FLpM',
+    videoStart: 50,
+    videoId2: 'tnnawZb-St8',
+    videoId2Label: 'Proposed Park for Shingle Mountain',
   },
   {
     id: 'sandbranch',
@@ -134,7 +146,12 @@ const PROJECTS = [
       { num: 'Ongoing', label: 'Water deliveries' },
       { num: '1', label: 'Community that should not be forgotten' },
     ],
-    img: 'Sandbranch Community — Water Delivery',
+    img: undefined,
+    slideshow: true,
+    videoId: undefined,
+    videoStart: undefined,
+    videoId2: undefined,
+    videoId2Label: undefined,
   },
   {
     id: 'ej-tours',
@@ -154,7 +171,12 @@ const PROJECTS = [
       { num: 'Hundreds', label: 'Participants educated' },
       { num: 'All welcome', label: 'Open to public' },
     ],
-    img: 'EJ Tour — South Dallas',
+    img: undefined,
+    slideshow: false,
+    videoId: 'xi025eH5DMU',
+    videoStart: undefined,
+    videoId2: undefined,
+    videoId2Label: undefined,
   },
 ];
 
@@ -258,11 +280,22 @@ export default function OurWorkPage() {
           </div>
 
           <div className={styles.projectsStack}>
-            {PROJECTS.map(({ id, tag, tagClass, status, statusClass, title, subtitle, body, stats, img }) => (
+            {PROJECTS.map(({ id, tag, tagClass, status, statusClass, title, subtitle, body, stats, img, slideshow, videoId, videoStart, videoId2, videoId2Label }) => (
               <article key={id} id={id} className={styles.projectBlock}>
                 <div className={styles.projectMedia}>
-                  {/* TODO: replace with <Image src={`/images/projects/${id}.jpg`} fill alt={title} /> */}
-                  <div className="img-placeholder">{img}</div>
+                  {slideshow ? (
+                    <ProjectSlideshow images={SANDBRANCH_IMAGES} />
+                  ) : videoId ? (
+                    <iframe
+                      className={styles.projectVideo}
+                      src={`https://www.youtube.com/embed/${videoId}${videoStart ? `?start=${videoStart}` : ''}`}
+                      title={title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div className="img-placeholder">{img}</div>
+                  )}
                   <div className={styles.projectMediaTags}>
                     <span className={`tag ${tagClass}`}>{tag}</span>
                     <span className={`tag ${statusClass}`}>{status}</span>
@@ -290,6 +323,20 @@ export default function OurWorkPage() {
                       </div>
                     ))}
                   </div>
+                  {videoId2 && (
+                    <div className={styles.projectVideo2Wrap}>
+                      <p className={styles.projectVideo2Label}>{videoId2Label}</p>
+                      <div className={styles.projectVideo2}>
+                        <iframe
+                          src={`https://www.youtube.com/embed/${videoId2}`}
+                          title={videoId2Label}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

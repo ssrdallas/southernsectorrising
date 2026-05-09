@@ -36,6 +36,16 @@ const BOARD_MEMBERS = [
     title: 'Board Member',
     img: '/images/team/sara-mokuria.webp',
   },
+  {
+    name: 'Jeremy Hind',
+    title: 'Board Member',
+    img: '/images/team/jeremy-hind.jpg',
+  },
+  {
+    name: 'Jessica Ramirez',
+    title: 'Board Member',
+    img: '/images/team/jessica-ramirez.jpg',
+  },
 ];
 
 const AWARDS = [
@@ -176,6 +186,15 @@ export default function AboutPage() {
               <div className={styles.originStat}>
                 <span className={styles.originStatNum}>200,000+</span>
                 <span className={styles.originStatLabel}>Tons of shingles removed from a Black neighborhood</span>
+              </div>
+              <div className={styles.originVideo}>
+                <iframe
+                  src="https://www.youtube.com/embed/5QmhmBOAwwE"
+                  title="Shingle Mountain — toxic dump in Floral Farms, South Dallas"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                />
               </div>
             </div>
           </div>

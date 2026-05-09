@@ -30,6 +30,7 @@ const PROJECTS = [
     tagClass: 'tag--forest',
     desc:     "After winning the fight to remove Shingle Mountain, we're transforming the site into a public park.",
     href:     '/our-work#floral-farms',
+    videoId:  'AnPePP0FLpM',
   },
   {
     title:    'Sandbranch Water Project',
@@ -37,6 +38,7 @@ const PROJECTS = [
     tagClass: 'tag--sky',
     desc:     "Delivering clean water to Sandbranch, an 87% Black freedmen's town still lacking proper water infrastructure.",
     href:     '/our-work#sandbranch',
+    videoId:  undefined,
   },
   {
     title:    'Environmental Justice Tours',
@@ -44,6 +46,7 @@ const PROJECTS = [
     tagClass: 'tag--gold',
     desc:     'Educational tours highlighting Dallas communities impacted by racist zoning and environmental hazards.',
     href:     '/our-work#ej-tours',
+    videoId:  'xi025eH5DMU',
   },
 ];
 
@@ -164,11 +167,20 @@ export default function HomePage() {
             <h2 className="section-title">Active Projects</h2>
           </div>
           <div className={styles.projectsGrid}>
-            {PROJECTS.map(({ title, tag, tagClass, desc, href }) => (
+            {PROJECTS.map(({ title, tag, tagClass, desc, href, videoId }) => (
               <article key={title} className={`card ${styles.projectCard}`}>
                 <div className={styles.projectImg}>
-                  {/* TODO: <Image src={`/images/projects/${slug}.jpg`} fill alt={title} /> */}
-                  <div className="img-placeholder">{title}</div>
+                  {videoId ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title={title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                    />
+                  ) : (
+                    <div className="img-placeholder">{title}</div>
+                  )}
                 </div>
                 <div className={styles.projectBody}>
                   <span className={`tag ${tagClass}`}>{tag}</span>

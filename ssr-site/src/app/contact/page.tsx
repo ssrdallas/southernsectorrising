@@ -75,9 +75,11 @@ export default function ContactPage() {
                 name="contact"
                 method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className={styles.form}
               >
                 <input type="hidden" name="form-name" value="contact" />
+                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
 
                 <div className={styles.formRow2}>
                   <div className={styles.formGroup}>
@@ -263,13 +265,22 @@ export default function ContactPage() {
               and racial justice.
             </p>
           </div>
-          <div className={styles.mapPlaceholder} role="img" aria-label="Map showing Dallas, Texas — Southern Sector">
-            <div className={styles.mapInner}>
-              <IconPin size={40} className={styles.mapPin} />
-              <p className={styles.mapLabel}>Dallas, Texas &mdash; Southern Sector</p>
-              <p className={styles.mapSub}>
-                Serving Floral Farms, Sandbranch, and communities across the Southern Sector
-              </p>
+          <div className={styles.mapWrap}>
+            <iframe
+              title="Southern Sector Dallas, Texas"
+              src="https://maps.google.com/maps?q=75241+Dallas+TX&z=13&output=embed"
+              className={styles.mapIframe}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className={styles.mapCard}>
+              <IconPin size={24} className={styles.mapCardPin} />
+              <div>
+                <strong className={styles.mapCardTitle}>Southern Sector, Dallas TX</strong>
+                <p className={styles.mapCardSub}>
+                  Serving Floral Farms, Sandbranch, and communities across the Southern Sector
+                </p>
+              </div>
             </div>
           </div>
         </div>
