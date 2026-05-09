@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { submitForm } from '@/lib/submitForm';
 import styles from './page.module.css';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -11,11 +12,9 @@ export default function EventsSignupForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('submitting');
-    const body = new URLSearchParams();
-    new FormData(e.currentTarget).forEach((v, k) => body.append(k, v.toString()));
     try {
-      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() });
-      setStatus(res.ok ? 'success' : 'error');
+      await submitForm('Events Signup', e.currentTarget);
+      setStatus('success');
     } catch {
       setStatus('error');
     }
