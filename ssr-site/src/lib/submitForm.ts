@@ -1,33 +1,27 @@
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '';
-
 export async function submitForm(
-  formName: string,
+  formType: string,
   formElement: HTMLFormElement,
 ): Promise<void> {
-  const raw: Record<string, string | string[]> = {};
+  const data: Record<string, string | string[]> = { formType };
+
   new FormData(formElement).forEach((value, key) => {
-    if (key === 'bot-field' || key === 'form-name') return;
-    const existing = raw[key];
+    if (key === 'bot-field' || key === 'form-name' || key === 'access_key') return;
+    const existing = data[key];
     if (existing !== undefined) {
-      raw[key] = [...(Array.isArray(existing) ? existing : [existing as string]), value.toString()];
+      data[key] = [...(Array.isArray(existing) ? existing : [existing as string]), value.toString()];
     } else {
-      raw[key] = value.toString();
+      data[key] = value.toString();
     }
   });
 
-  const res = await fetch('https://api.web3forms.com/submit', {
+  const res = await fetch('/api/contact', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({
-      access_key: WEB3FORMS_KEY,
-      subject: `New ${formName} submission — Southern Sector Rising`,
-      from_name: 'SSR Website',
-      ...raw,
-    }),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
   });
 
   if (!res.ok) {
-    const data = await res.json().catch(() => ({}));
-    throw new Error(data.message ?? 'Submission failed');
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err as { error?: string }).error ?? 'Submission failed');
   }
 }
