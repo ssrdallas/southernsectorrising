@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IconArrowDown } from '@/components/icons/SocialIcons';
+import ProjectSlideshow from '@/components/sections/ProjectSlideshow';
 import styles from './page.module.css';
+
+const SANDBRANCH_IMAGES = [
+  'IMG_5202','IMG_5203','IMG_5204','IMG_5205','IMG_5206',
+  'IMG_5207','IMG_5210','IMG_8621','IMG_8625','IMG_8635',
+  'IMG_8638','IMG_8639','IMG_8648',
+].map(name => ({ src: `/images/projects/sandbranch/${name}.jpg`, alt: `Sandbranch community — ${name}` }));
 
 export const metadata: Metadata = {
   title: 'Southern Sector Rising | Local Roots. Global Impact.',
@@ -39,6 +46,7 @@ const PROJECTS = [
     desc:     "Delivering clean water to Sandbranch, an 87% Black freedmen's town still lacking proper water infrastructure.",
     href:     '/our-work#sandbranch',
     videoId:  undefined,
+    slideshow: true,
   },
   {
     title:    'Environmental Justice Tours',
@@ -167,10 +175,12 @@ export default function HomePage() {
             <h2 className="section-title">Active Projects</h2>
           </div>
           <div className={styles.projectsGrid}>
-            {PROJECTS.map(({ title, tag, tagClass, desc, href, videoId }) => (
+            {PROJECTS.map(({ title, tag, tagClass, desc, href, videoId, slideshow }) => (
               <article key={title} className={`card ${styles.projectCard}`}>
                 <div className={styles.projectImg}>
-                  {videoId ? (
+                  {slideshow ? (
+                    <ProjectSlideshow images={SANDBRANCH_IMAGES} />
+                  ) : videoId ? (
                     <iframe
                       src={`https://www.youtube.com/embed/${videoId}`}
                       title={title}
