@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { IconCheck } from '@/components/icons/SocialIcons';
 import DonateWidget from '@/components/sections/DonateWidget';
+import VolunteerForm from './VolunteerForm';
+import TourForm from './TourForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -49,16 +51,6 @@ const WAY_CARDS = [
   },
 ];
 
-const INTEREST_AREAS = [
-  { id: 'interest-water',      label: 'Water deliveries (Sandbranch)' },
-  { id: 'interest-tours',      label: 'EJ Tours' },
-  { id: 'interest-organizing', label: 'Community organizing' },
-  { id: 'interest-events',     label: 'Events' },
-  { id: 'interest-admin',      label: 'Admin / Operations' },
-  { id: 'interest-other',      label: 'Other' },
-];
-
-const DONATION_TIERS = ['$25', '$50', '$100', '$250', '$500', 'Custom'];
 
 const IMPACT_ITEMS = [
   { amount: '$25',    impact: 'Provides clean water to a Sandbranch family for one month' },
@@ -151,109 +143,7 @@ export default function GetInvolvedPage() {
               </ul>
             </div>
             <div className={styles.formCard}>
-              <form
-                name="volunteer-signup"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className={styles.form}
-              >
-                <input type="hidden" name="form-name" value="volunteer-signup" />
-                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="vol-first">First Name <span aria-hidden="true">*</span></label>
-                    <input
-                      type="text"
-                      id="vol-first"
-                      name="first_name"
-                      placeholder="First name"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="vol-last">Last Name <span aria-hidden="true">*</span></label>
-                    <input
-                      type="text"
-                      id="vol-last"
-                      name="last_name"
-                      placeholder="Last name"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="vol-email">Email Address <span aria-hidden="true">*</span></label>
-                    <input
-                      type="email"
-                      id="vol-email"
-                      name="email"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="vol-phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="vol-phone"
-                      name="phone"
-                      placeholder="(214) 555-0100"
-                    />
-                  </div>
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="vol-city">City / Zip Code <span aria-hidden="true">*</span></label>
-                  <input
-                    type="text"
-                    id="vol-city"
-                    name="city_zip"
-                    placeholder="Dallas, TX or 75241"
-                    required
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="vol-hear">How did you hear about us?</label>
-                  <select id="vol-hear" name="how_heard">
-                    <option value="">-- Select one --</option>
-                    <option value="social-media">Social Media</option>
-                    <option value="friend-family">Friend or Family</option>
-                    <option value="news-media">News / Media</option>
-                    <option value="event">Event or Tour</option>
-                    <option value="search">Web Search</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <fieldset className={styles.checkboxFieldset}>
-                  <legend>Areas of Interest <span className={styles.optional}>(select all that apply)</span></legend>
-                  <div className={styles.checkboxGrid}>
-                    {INTEREST_AREAS.map((area) => (
-                      <label key={area.id} className={styles.checkboxLabel}>
-                        <input
-                          type="checkbox"
-                          id={area.id}
-                          name="interests"
-                          value={area.id.replace('interest-', '')}
-                        />
-                        <span>{area.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </fieldset>
-                <div className={styles.formGroup}>
-                  <label htmlFor="vol-message">Anything else you&rsquo;d like us to know?</label>
-                  <textarea
-                    id="vol-message"
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us about your skills, availability, or motivation..."
-                  />
-                </div>
-                <button type="submit" className="btn btn--gold btn--lg">
-                  Submit Volunteer Application
-                </button>
-              </form>
+              <VolunteerForm />
             </div>
           </div>
         </div>
@@ -323,90 +213,7 @@ export default function GetInvolvedPage() {
               </ul>
             </div>
             <div className={styles.formCard}>
-              <form
-                name="tour-request"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className={styles.form}
-              >
-                <input type="hidden" name="form-name" value="tour-request" />
-                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
-                <div className={styles.formGroup}>
-                  <label htmlFor="tour-name">Full Name <span aria-hidden="true">*</span></label>
-                  <input
-                    type="text"
-                    id="tour-name"
-                    name="name"
-                    placeholder="Your full name"
-                    required
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="tour-org">Organization or School</label>
-                  <input
-                    type="text"
-                    id="tour-org"
-                    name="organization"
-                    placeholder="Dallas ISD, SMU, First Baptist, etc."
-                  />
-                </div>
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="tour-email">Email Address <span aria-hidden="true">*</span></label>
-                    <input
-                      type="email"
-                      id="tour-email"
-                      name="email"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="tour-phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="tour-phone"
-                      name="phone"
-                      placeholder="(214) 555-0100"
-                    />
-                  </div>
-                </div>
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="tour-dates">Preferred Date(s) <span aria-hidden="true">*</span></label>
-                    <input
-                      type="text"
-                      id="tour-dates"
-                      name="preferred_dates"
-                      placeholder="e.g. Any Saturday in April"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="tour-size">Group Size <span aria-hidden="true">*</span></label>
-                    <input
-                      type="text"
-                      id="tour-size"
-                      name="group_size"
-                      placeholder="e.g. 15 students"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="tour-message">Additional Information</label>
-                  <textarea
-                    id="tour-message"
-                    name="message"
-                    rows={4}
-                    placeholder="Describe your group, any accessibility needs, or specific topics of interest..."
-                  />
-                </div>
-                <button type="submit" className="btn btn--gold btn--lg">
-                  Request a Tour
-                </button>
-              </form>
+              <TourForm />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import {
   IconTwitterX,
   IconLinkedIn,
 } from '@/components/icons/SocialIcons';
+import ContactForm from './ContactForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -71,89 +72,7 @@ export default function ContactPage() {
                 Fill out the form below and a member of our team will get back to you
                 as soon as possible.
               </p>
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className={styles.form}
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
-
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="contact-name">
-                      Full Name <span className={styles.required} aria-hidden="true">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="contact-name"
-                      name="name"
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="contact-email">
-                      Email Address <span className={styles.required} aria-hidden="true">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="contact-email"
-                      name="email"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.formRow2}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="contact-phone">
-                      Phone Number <span className={styles.optionalLabel}>(optional)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="contact-phone"
-                      name="phone"
-                      placeholder="(214) 555-0100"
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="contact-subject">
-                      Subject <span className={styles.required} aria-hidden="true">*</span>
-                    </label>
-                    <select id="contact-subject" name="subject" required>
-                      <option value="">-- Select a subject --</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="media">Media / Press</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="speaking">Speaking Request</option>
-                      <option value="volunteer">Volunteer</option>
-                      <option value="donation">Donation</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="contact-message">
-                    Message <span className={styles.required} aria-hidden="true">*</span>
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows={6}
-                    placeholder="Tell us how we can help, or share what&#39;s on your mind..."
-                    required
-                  />
-                </div>
-
-                <button type="submit" className="btn btn--gold btn--lg">
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
             {/* RIGHT: Contact Info */}

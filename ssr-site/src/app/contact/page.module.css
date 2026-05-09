@@ -383,3 +383,30 @@ a.infoDetail:hover {
     max-width: calc(100% - 2rem);
   }
 }
+
+/* ── Form feedback ── */
+.formSuccess {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.formSuccessIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-forest);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.formError {
+  color: var(--color-danger, #e53e3e);
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}

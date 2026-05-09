@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import LogoIcon from '@/components/icons/LogoIcon';
 import { IconInstagram, IconFacebook, IconTwitterX, IconLinkedIn } from '@/components/icons/SocialIcons';
+import NewsletterForm from './NewsletterForm';
 import styles from './Footer.module.css';
 
 const SOCIAL = [
@@ -79,18 +80,7 @@ export default function Footer() {
             </address>
             <div className={styles.newsletter}>
               <h4>Stay Updated</h4>
-              <form
-                name="newsletter"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className={styles.newsletterForm}
-              >
-                <input type="hidden" name="form-name" value="newsletter" />
-                <input type="hidden" name="bot-field" style={{ display: 'none' }} />
-                <input type="email" name="email" placeholder="Your email address" required />
-                <button type="submit" className="btn btn--gold btn--sm">Subscribe</button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
 

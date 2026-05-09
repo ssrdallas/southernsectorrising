@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import EventsSignupForm from './EventsSignupForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -202,44 +203,7 @@ export default function EventsPage() {
               </p>
             </div>
             <div className={styles.ctaForm}>
-              <form
-                name="events-signup"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className={styles.signupForm}
-              >
-                <input type="hidden" name="form-name" value="events-signup" />
-                <p style={{ display: 'none' }}><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
-                <div className={styles.formRow}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="signup-name">Full Name</label>
-                    <input
-                      type="text"
-                      id="signup-name"
-                      name="name"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="signup-email">Email Address</label>
-                    <input
-                      type="email"
-                      id="signup-email"
-                      name="email"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-                <button type="submit" className="btn btn--gold btn--lg">
-                  Sign Me Up
-                </button>
-                <p className={styles.formNote}>
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
-              </form>
+              <EventsSignupForm />
             </div>
           </div>
         </div>
