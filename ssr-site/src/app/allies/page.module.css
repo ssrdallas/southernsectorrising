@@ -190,56 +190,86 @@
   min-width: 200px;
 }
 
-/* ── Logo Placeholders Grid ── */
+/* ── Funders Logo Strip ── */
+.fundersStrip {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.fundersLabel {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.fundersGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.funderLogo {
+  position: relative;
+  width: 140px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+/* ── Logo Grid ── */
 .logosGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-sm);
 }
 
-.logoPlaceholder {
+.logoItem {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-light);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+  overflow: hidden;
+}
+
+.logoItem:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-forest);
+}
+
+.logoItemText {
   background: var(--color-sand);
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-sm);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 100px;
-  border: 2px dashed rgba(92, 64, 51, 0.2);
+  min-height: 90px;
+  border: 1px solid var(--color-gray-light);
   text-align: center;
-  transition: border-color var(--transition-base), background var(--transition-base);
-}
-
-.logoPlaceholder:hover {
-  border-color: var(--color-forest);
-  background: #eddfc8;
-}
-
-.logoText {
-  font-family: var(--font-accent);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-soil);
-  opacity: 0.6;
 }
 
 .logoName {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--color-forest);
   font-weight: 600;
-  line-height: 1.3;
-}
-
-.partnerNote {
+  line-height: 1.4;
   text-align: center;
-  font-size: 0.8rem;
-  color: var(--color-gray);
-  font-style: italic;
-  margin-top: var(--space-lg);
 }
 
 /* ── Join the Coalition ── */

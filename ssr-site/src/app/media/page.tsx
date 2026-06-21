@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const PRESS_ARTICLES = [
   {
+    title: 'The Woman Who Fought to Tear Down Shingle Mountain is Celebrated at Museum Exhibit',
+    outlet: 'Dallas Museum of Art',
+    outletTag: 'tag--gold',
+    type: 'Feature',
+    desc: 'For her installation at the Dallas Museum of Art, artist Ari Brielle chose to highlight Floral Farms resident Marsha Jackson and her fight to remove Shingle Mountain.',
+    href: '#',
+  },
+  {
     title: 'In Texas, Residents Are Dying To Breathe Clean Air',
     outlet: 'National Coverage',
     outletTag: 'tag--sky',
@@ -324,14 +332,14 @@ export default function MediaPage() {
               <h3>Get in Touch</h3>
               <div className={styles.contactItem}>
                 <IconMail size={18} />
-                <a href="mailto:media@southernsectorrising.org" className={styles.contactLink}>
-                  media@southernsectorrising.org
+                <a href="mailto:info@southernsectorrising.org" className={styles.contactLink}>
+                  info@southernsectorrising.org
                 </a>
               </div>
               <div className={styles.contactItem}>
                 <IconPhone size={18} />
-                <a href="tel:+12145550000" className={styles.contactLink}>
-                  (214) 555-0000
+                <a href="tel:+19728612152" className={styles.contactLink}>
+                  (972) 861-2152
                 </a>
               </div>
               <div className={styles.pressKitCta}>

@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 const BOARD_MEMBERS = [
   {
     name: 'Bonnie Mathias',
-    title: 'Board Member',
+    title: 'Co-Chair',
     img: '/images/team/bonnie-mathias.webp',
   },
   {
-    name: 'Chelsi Floyd',
-    title: 'Board Member',
-    img: '/images/team/chelsi-floyd.webp',
+    name: 'Danielle Ayers',
+    title: 'Co-Chair',
+    img: '/images/team/danielle-ayers.webp',
   },
   {
-    name: 'Danielle Ayers',
+    name: 'Chelsea Floyd',
     title: 'Board Member',
-    img: '/images/team/danielle-ayers.webp',
+    img: '/images/team/chelsi-floyd.webp',
   },
   {
     name: 'Genaro Viniegra',
@@ -37,7 +37,7 @@ const BOARD_MEMBERS = [
     img: '/images/team/sara-mokuria.webp',
   },
   {
-    name: 'Jeremy Hind',
+    name: 'Jeremy Hinds',
     title: 'Board Member',
     img: '/images/team/jeremy-hind.jpg',
   },
@@ -46,6 +46,7 @@ const BOARD_MEMBERS = [
     title: 'Board Member',
     img: '/images/team/jessica-ramirez.jpg',
   },
+  // TODO: Add photos for Erik Wilson and Anthony Andrews when received from client
 ];
 
 const AWARDS = [

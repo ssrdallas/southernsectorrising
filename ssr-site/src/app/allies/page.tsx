@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IconCheck, IconGlobe, IconMail } from '@/components/icons/SocialIcons';
 import styles from './page.module.css';
@@ -16,16 +17,25 @@ const STATS = [
   { number: '6+',   label: 'Years of Coalition Building' },
 ];
 
-const PARTNER_CATEGORIES = [
+const FUNDERS = [
+  { name: 'Tides Foundation',                src: '/images/partners/tides.jpg' },
+  { name: 'Patagonia',                        src: '/images/partners/patagonia.jpg' },
+  { name: "Women's Foundation of the South", src: '/images/partners/womens-foundation-south.png' },
+  { name: 'Black Belt Community Foundation', src: '/images/partners/black-belt-community-foundation.png' },
+  { name: 'Kataly Foundation',               src: '/images/partners/kataly-foundation.png' },
+];
+
+type Partner = { name: string; src: string | null };
+
+const PARTNER_CATEGORIES: { category: string; tagClass: string; desc: string; partners: Partner[] }[] = [
   {
     category: 'Environmental Justice',
     tagClass: 'tag--forest',
     desc: 'Organizations fighting environmental racism, pollution, and toxic dumping in BIPOC and frontline communities.',
     partners: [
-      'EJ Partner Organization 1',
-      'EJ Partner Organization 2',
-      'EJ Partner Organization 3',
-      'EJ Partner Organization 4',
+      { name: 'Society of Native Nations',         src: '/images/partners/society-native-nations.png' },
+      { name: 'Carrizo Comecrudo Tribe of Texas',  src: '/images/partners/carrizo-comecrudo-tribe.png' },
+      { name: 'Downwinders at Risk',               src: null },
     ],
   },
   {
@@ -33,32 +43,20 @@ const PARTNER_CATEGORIES = [
     tagClass: 'tag--sky',
     desc: 'Climate advocacy groups connecting the climate crisis to racial and economic equity.',
     partners: [
-      'Climate Action Partner 1',
-      'Climate Action Partner 2',
-      'Climate Action Partner 3',
-      'Climate Action Partner 4',
+      { name: 'Gulf South for a Green New Deal', src: '/images/partners/gulf-south-green-new-deal.png' },
+      { name: 'Sunrise Movement',                src: '/images/partners/sunrise.png' },
+      { name: 'New Economy Coalition',           src: '/images/partners/new-economy-coalition.png' },
     ],
   },
   {
-    category: 'Food & Labor',
+    category: 'Movement Partners',
     tagClass: 'tag--gold',
-    desc: 'Allies advancing food sovereignty, fair labor conditions, and worker protections.',
+    desc: 'National and regional organizations advancing racial justice, Black liberation, and community power.',
     partners: [
-      'Food & Labor Partner 1',
-      'Food & Labor Partner 2',
-      'Food & Labor Partner 3',
-      'Food & Labor Partner 4',
-    ],
-  },
-  {
-    category: 'International Partners',
-    tagClass: 'tag--sky',
-    desc: 'Global allies connecting SSR to the international environmental and climate justice movement.',
-    partners: [
-      'International Partner 1',
-      'International Partner 2',
-      'International Partner 3',
-      'International Partner 4',
+      { name: 'Movement for Black Lives (M4BL)',             src: '/images/partners/m4bl.jpg' },
+      { name: 'The Black Hive',                             src: '/images/partners/the-black-hive.jpg' },
+      { name: 'Black Voters Matter',                        src: '/images/partners/black-voters-matter.png' },
+      { name: 'Southern Black Girls & Women\'s Consortium', src: '/images/partners/southern-black-girls.png' },
     ],
   },
   {
@@ -66,10 +64,10 @@ const PARTNER_CATEGORIES = [
     tagClass: 'tag--forest',
     desc: 'Dallas-area organizations rooted in Southern Sector communities and local advocacy.',
     partners: [
-      'Local Partner 1',
-      'Local Partner 2',
-      'Local Partner 3',
-      'Local Partner 4',
+      { name: 'Dallas Housing Coalition',       src: '/images/partners/dallas-housing-coalition.png' },
+      { name: 'Texas Organizing Project (TOP)', src: '/images/partners/texas-organizing-project.png' },
+      { name: 'Sandbranch D&WSC',               src: '/images/partners/sandbranch-dwsc.png' },
+      { name: 'Friendship West Baptist Church', src: null },
     ],
   },
 ];
@@ -188,9 +186,21 @@ export default function AlliesPage() {
             <p className="eyebrow">Our Partners</p>
             <h2 className="section-title">Allies Across Movements</h2>
             <p className="section-desc">
-              Our coalition spans five sectors of the justice movement. Each category represents
-              a critical dimension of the world we&rsquo;re building together.
+              Our coalition spans the environmental justice, climate action, and movement-building
+              sectors. Each relationship is grounded in the Jemez Principles.
             </p>
+          </div>
+
+          {/* Funders & Supporters */}
+          <div className={styles.fundersStrip}>
+            <p className={styles.fundersLabel}>Funders &amp; Supporters</p>
+            <div className={styles.fundersGrid}>
+              {FUNDERS.map(({ name, src }) => (
+                <div key={name} className={styles.funderLogo}>
+                  <Image src={src} fill alt={name} style={{ objectFit: 'contain' }} />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className={styles.categoriesStack}>
@@ -201,21 +211,21 @@ export default function AlliesPage() {
                   <p className={styles.categoryDesc}>{desc}</p>
                 </div>
                 <div className={styles.logosGrid}>
-                  {partners.map((name) => (
-                    <div key={name} className={styles.logoPlaceholder}>
-                      {/* TODO: replace with <Image src={`/images/partners/${slug}.png`} fill alt={name} /> */}
-                      <span className={styles.logoText}>Partner Logo</span>
-                      <span className={styles.logoName}>{name}</span>
-                    </div>
-                  ))}
+                  {partners.map(({ name, src }) =>
+                    src ? (
+                      <div key={name} className={styles.logoItem}>
+                        <Image src={src} fill alt={name} style={{ objectFit: 'contain', padding: '8px' }} />
+                      </div>
+                    ) : (
+                      <div key={name} className={styles.logoItemText}>
+                        <span className={styles.logoName}>{name}</span>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             ))}
           </div>
-
-          <p className={styles.partnerNote}>
-            Partner logos and links are being updated. Full directory coming soon.
-          </p>
         </div>
       </section>
 
