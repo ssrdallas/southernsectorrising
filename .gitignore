@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # local image dump (not for repo)
-../img_src/
+/img_src/
 
 # Environment secrets
 .env.local
