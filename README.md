@@ -5,7 +5,7 @@ Southern Sector Rising website built with Next.js.
 ## Development
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Open `http://localhost:3000`.
@@ -13,7 +13,7 @@ Open `http://localhost:3000`.
 ## Build
 
 ```bash
-npm run build
+yarn build
 ```
 
 The app lives at the repository root:
