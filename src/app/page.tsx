@@ -157,7 +157,7 @@ export default function HomePage() {
                 <h3>2026 Juneteenth Freedom Day</h3>
               </Link>
               <p>
-                Southern Sector Rising speaks with community residents and advocates for the Sandbranch community to hear their voices and perspectives.
+                Southern Sector Rising speaks with community residents and advocates for the Sandbranch community to hear their voices and perspectives. If viewing on mobile, launch video in new tab.
               </p>
               <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsLink}>
                 Click here to view media
