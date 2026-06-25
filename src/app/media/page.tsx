@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     'Press coverage, documentary film, and media resources for Southern Sector Rising and Dr. Marsha Jackson\'s environmental justice work in Southern Dallas.',
 };
 
+const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL = 'https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview';
+
 const PRESS_ARTICLES = [
   {
     title: 'The Woman Who Fought to Tear Down Shingle Mountain is Celebrated at Museum Exhibit',
@@ -275,6 +277,23 @@ export default function MediaPage() {
                 src="https://www.youtube.com/embed/xi025eH5DMU"
                 title="Environmental Justice Symposium 2022 — Southern Sector Rising"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
+            </div>
+          </div>
+
+          <div id="juneteenth-freedom-day" className={styles.ejSymposiumWrap}>
+            <p className={styles.ejSymposiumLabel}>Event Highlights</p>
+            <h3 className={styles.ejSymposiumTitle}>2026 Juneteenth Freedom Day</h3>
+            <p className={styles.ejSymposiumDesc}>
+              Southern Sector Rising speaks with community residents and advocates for the Sandbranch community to hear their voices and perspectives.
+            </p>
+            <div className={styles.ejSymposiumVideo}>
+              <iframe
+                src={EVENT_HIGHLIGHTS_VIDEO_EMBED_URL}
+                title="2026 Juneteenth Freedom Day — Southern Sector Rising"
+                allow="autoplay; encrypted-media"
                 allowFullScreen
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
               />

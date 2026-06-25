@@ -145,6 +145,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section--sand">
+        <div className="container">
+          <div className="section-header">
+            <p className="eyebrow">Event Highlights</p>
+            <h2 className="section-title">Sandbranch Mini-Documentary</h2>
+          </div>
+          <div className={styles.eventHighlightsCard}>
+            <div className={styles.eventHighlightsText}>
+              <Link href="/media#juneteenth-freedom-day" className="link-arrow">
+                <h3>2026 Juneteenth Freedom Day</h3>
+              </Link>
+              <p>
+                Southern Sector Rising speaks with community residents and advocates for the Sandbranch community to hear their voices and perspectives.
+              </p>
+              <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsLink}>
+                Click here to view media
+              </Link>
+            </div>
+            <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsMedia} aria-label="View the Sandbranch mini-documentary on the media page">
+              <iframe
+                src="https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview"
+                title="2026 Juneteenth Freedom Day"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <div className="section-header">
