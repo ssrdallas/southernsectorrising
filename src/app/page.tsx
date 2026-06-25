@@ -123,7 +123,7 @@ export default function HomePage() {
             <div className={styles.founderCard}>
               <div className={styles.founderImg}>
                 <Image
-                  src="/images/team/marsha-jackson.png"
+                  src="/images/team/marsha-jackson.jpeg"
                   fill
                   alt="Dr. Marsha Jackson, Founder & Executive Director"
                   style={{ objectFit: 'cover', objectPosition: 'top' }}
