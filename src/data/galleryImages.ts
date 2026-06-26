@@ -58,7 +58,6 @@ const GALLERY_ITEMS: GalleryItem[] = [
   { src: '/images/gallery/rome-IMG_1509.jpg', alt: 'SSR Rome delegation', group: 'rome' },
   { src: '/images/gallery/rome-IMG_1511.jpg', alt: 'SSR Rome delegation', group: 'rome' },
   { src: '/images/gallery/rome-IMG_1513.jpg', alt: 'SSR Rome delegation', group: 'rome' },
-  { src: '/images/gallery/rome-IMG_1516.jpg', alt: 'SSR Rome delegation', group: 'rome' },
   { src: '/images/gallery/rome-IMG_1518.jpg', alt: 'SSR Rome delegation', group: 'rome' },
   { src: '/images/gallery/rome-IMG_1520.jpg', alt: 'SSR Rome delegation', group: 'rome' },
   { src: '/images/gallery/rome-IMG_1529.jpg', alt: 'SSR Rome delegation', group: 'rome' },
