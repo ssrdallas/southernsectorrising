@@ -114,7 +114,7 @@ export default function AlliesPage() {
           <p className={styles.heroSubtitle}>150+ Organizations. One Movement.</p>
           <p className={styles.heroDesc}>
             Southern Sector Rising has never fought alone. Our strength comes from a deep
-            coalition of aligned organizations — local, national, and international — who
+            coalition of aligned organizations- local, national, and international- who
             believe that justice is indivisible.
           </p>
           <div className={styles.heroCta}>
