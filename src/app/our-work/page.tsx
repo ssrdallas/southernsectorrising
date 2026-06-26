@@ -8,10 +8,20 @@ import GALLERY_ITEMS from '@/data/galleryImages';
 import styles from './page.module.css';
 
 const SANDBRANCH_IMAGES = [
-  'IMG_4529.HEIC','IMG_5203','IMG_5204','IMG_5205','IMG_5206',
-  'IMG_5207','IMG_5210','DSC00006.jpg','IMG_8625','IMG_8635',
-  'IMG_8638','IMG_8639','IMG_8648',
-].map(name => ({ src: `/images/projects/sandbranch/${name}.jpg`, alt: 'Sandbranch community — water access project' }));
+  'DSC00006.jpg',
+  'DSC00132.jpg',
+  'DSC00231.jpg',
+  'DSC00253 (1).jpg',
+  'IMG_4471.JPG',
+  'IMG_4526.jpg',
+  'IMG_4528.jpg',
+  'IMG_4529.jpg',
+  'IMG_4539.jpg',
+  'IMG_4545.JPG',
+].map(name => ({
+  src: `/images/projects/sandbranch/${encodeURIComponent(name)}`,
+  alt: 'Sandbranch community — water access project',
+}));
 
 export const metadata: Metadata = {
   title: 'Our Work',
