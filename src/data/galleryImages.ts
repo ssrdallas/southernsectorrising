@@ -6,11 +6,6 @@ export type GalleryItem = {
 
 const GALLERY_ITEMS: GalleryItem[] = [
   // Kenya delegation
-  { src: '/images/gallery/kenya-image000000.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
-  { src: '/images/gallery/kenya-image000001.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
-  { src: '/images/gallery/kenya-image000002.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
-  { src: '/images/gallery/kenya-image000003.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
-  { src: '/images/gallery/kenya-image000004.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
   { src: '/images/gallery/kenya-IMG_9030.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
   { src: '/images/gallery/kenya-IMG_9031.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
   { src: '/images/gallery/kenya-IMG_9033.jpg', alt: 'SSR Kenya delegation', group: 'kenya' },
