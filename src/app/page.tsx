@@ -6,7 +6,6 @@ import ProjectSlideshow from '@/components/sections/ProjectSlideshow';
 import styles from './page.module.css';
 
 const SANDBRANCH_IMAGES = [
-  'IMG_5202','IMG_5203',
 ].map(name => ({ src: `/images/projects/sandbranch/${name}.jpg`, alt: `Sandbranch community — ${name}` }));
 
 export const metadata: Metadata = {
