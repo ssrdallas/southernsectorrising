@@ -46,7 +46,16 @@ const BOARD_MEMBERS = [
     title: 'Board Member',
     img: '/images/team/jessica-ramirez.jpg',
   },
-  // TODO: Add photos for Erik Wilson and Anthony Andrews when received from client
+  {
+    name: 'Anthony Andrews',
+    title: 'Board Member',
+    img: '/images/team/Anthony Andrews.jpg',
+  },
+  {
+    name: 'Erik Wilson',
+    title: 'Board Member',
+    img: '/images/team/ErikWilsonimage1.jpeg',
+  },
 ];
 
 const AWARDS = [
