@@ -8,8 +8,8 @@ import GALLERY_ITEMS from '@/data/galleryImages';
 import styles from './page.module.css';
 
 const SANDBRANCH_IMAGES = [
-  'IMG_5202','IMG_5203','IMG_5204','IMG_5205','IMG_5206',
-  'IMG_5207','IMG_5210','IMG_8621','IMG_8625','IMG_8635',
+  'IMG_4529.HEIC','IMG_5203','IMG_5204','IMG_5205','IMG_5206',
+  'IMG_5207','IMG_5210','DSC00006.jpg','IMG_8625','IMG_8635',
   'IMG_8638','IMG_8639','IMG_8648',
 ].map(name => ({ src: `/images/projects/sandbranch/${name}.jpg`, alt: 'Sandbranch community — water access project' }));
 
