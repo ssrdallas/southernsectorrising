@@ -79,7 +79,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className={styles.scrollHint} aria-hidden="true">
-          <span>Scroll to discover</span>
+          <span>Scroll to learn more</span>
           <IconArrowDown size={20} />
         </div>
       </section>

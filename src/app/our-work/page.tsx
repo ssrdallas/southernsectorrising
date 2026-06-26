@@ -157,7 +157,7 @@ const PROJECTS = [
       { num: '1', label: 'Community that should not be forgotten' },
     ],
     img: undefined,
-    slideshow: true,
+    slideshow: false,
     videoId: undefined,
     videoStart: undefined,
     videoId2: undefined,
