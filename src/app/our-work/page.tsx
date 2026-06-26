@@ -132,7 +132,7 @@ const PROJECTS = [
       { num: '3 years', label: 'Campaign length' },
     ],
     img: undefined,
-    slideshow: false,
+    slideshow: true,
     videoId: 'AnPePP0FLpM',
     videoStart: 50,
     videoId2: 'tnnawZb-St8',
