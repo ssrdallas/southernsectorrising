@@ -25,7 +25,7 @@ const PRESS_ARTICLES = [
     outlet: 'National Coverage',
     outletTag: 'tag--sky',
     type: 'Investigative',
-    desc: 'National investigative reporting on the health impacts facing residents in communities like Southern Dallas — documenting the direct human cost of living near industrial pollution and illegal dumping sites.',
+    desc: 'National investigative reporting on the health impacts residents are facing in communities like Southern Dallas, documenting the direct human cost of living near industrial pollution and illegal dumping sites.',
     href: '#',
   },
   {
@@ -41,7 +41,7 @@ const PRESS_ARTICLES = [
     outlet: 'Victory Coverage',
     outletTag: 'tag--gold',
     type: 'News',
-    desc: 'Coverage of the landmark victory: the removal of the illegally-dumped shingle mountain that sat next to the Floral Farms neighborhood for years — a win driven entirely by community organizing.',
+    desc: 'Coverage of the landmark victory: the removal of the illegally-dumped shingle mountain that sat next to the Floral Farms neighborhood for years. This is a win driven entirely by community organizing.',
     href: '#',
   },
   {
@@ -49,7 +49,7 @@ const PRESS_ARTICLES = [
     outlet: 'Dallas Media',
     outletTag: 'tag--forest',
     type: 'Award',
-    desc: 'Recognition of Dr. Marsha Jackson\'s 2019 Sierra Club Lone Star Chapter Environmentalist of the Year award — one of several honors for her leadership in the Southern Dallas environmental justice movement.',
+    desc: 'Recognition of Dr. Marsha Jackson\'s 2019 Sierra Club Lone Star Chapter Environmentalist of the Year award. This is one of several honors for her leadership in the Southern Dallas environmental justice movement.',
     href: '#',
   },
   {
@@ -57,7 +57,7 @@ const PRESS_ARTICLES = [
     outlet: 'Entertainment & News',
     outletTag: 'tag--sky',
     type: 'Feature',
-    desc: 'Coverage of BET\'s "Disrupt & Dismantle with Soledad O\'Brien" documentary feature on Shingle Mountain and Dr. Jackson\'s three-year battle — bringing national attention to environmental racism in Dallas.',
+    desc: 'Coverage of BET\'s "Disrupt & Dismantle with Soledad O\'Brien" documentary feature on Shingle Mountain and Dr. Jackson\'s three-year battle, bringing national attention to environmental racism in Dallas.',
     href: '#',
   },
   {
@@ -132,13 +132,13 @@ export default function MediaPage() {
               </h2>
               <p className="lead">
                 National documentary featuring Dr. Marsha Jackson&rsquo;s three-year fight
-                against Shingle Mountain — a powerful portrait of community-led environmental
+                against Shingle Mountain, a powerful portrait of community-led environmental
                 justice activism in Southern Dallas.
               </p>
               <p>
                 Hosted by award-winning journalist Soledad O&rsquo;Brien, the BET documentary
                 brought the story of Floral Farms and the illegal shingle dump to a national
-                audience — exposing the environmental racism that has long plagued Southern
+                audience, exposing the environmental racism that has long plagued Southern
                 Dallas and celebrating the community victory that ended it.
               </p>
               <div className={styles.featuredActions}>
@@ -175,7 +175,7 @@ export default function MediaPage() {
                 <h3>Environmental Justice -vs- Shingle Mountain</h3>
                 <p>
                   A documentary portrait of Dr. Marsha Jackson and the years-long community
-                  battle against the illegal shingle dump — a symbol of environmental racism
+                  battle against the illegal shingle dump, a symbol of environmental racism
                   in Southern Dallas.
                 </p>
                 <a
@@ -202,7 +202,7 @@ export default function MediaPage() {
                 <h3>In Texas, Residents Are Dying to Breathe Clean Air</h3>
                 <p>
                   National investigative coverage of the health crisis facing residents of
-                  the Southern Sector — documenting the direct human cost of racist zoning
+                  the Southern Sector, documenting the direct human cost of racist zoning
                   and illegal toxic dumping.
                 </p>
                 <a
@@ -229,7 +229,7 @@ export default function MediaPage() {
                 <h3>Toxic Shingle Mountain: Blue Star Recycling&rsquo;s Crisis</h3>
                 <p>
                   The original 2019 reporting that brought the Shingle Mountain crisis to
-                  light — exposing how Blue Star Recycling created a toxic mountain of
+                  light, exposing how Blue Star Recycling created a toxic mountain of
                   asphalt shingles next to a South Dallas neighborhood.
                 </p>
                 <a
@@ -255,7 +255,7 @@ export default function MediaPage() {
               <div className={styles.filmCardBody}>
                 <h3>Shingle Mountain Removal Begins</h3>
                 <p>
-                  Workers begin removing the shingles that accumulated over three years —
+                  Workers begin removing the shingles that accumulated over three years,
                   marking the start of the community victory Dr. Jackson and Floral Farms
                   residents fought years to achieve.
                 </p>
@@ -309,7 +309,7 @@ export default function MediaPage() {
             <p className="eyebrow">In the News</p>
             <h2 className="section-title">Press Coverage</h2>
             <p className="section-desc">
-              From investigative reporting to victory announcements — here is how the press
+              From investigative reporting to victory announcements, here is how the press
               has covered Southern Sector Rising and the fight for environmental justice
               in Southern Dallas.
             </p>
@@ -338,7 +338,7 @@ export default function MediaPage() {
               <p className="eyebrow">Media Inquiries</p>
               <h2 style={{ color: 'var(--color-white)' }}>Press Contact</h2>
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Journalists, documentary filmmakers, and media producers — we welcome your
+                Journalists, documentary filmmakers, and media producers, we welcome your
                 inquiries. Dr. Marsha Jackson is available for interviews, commentary, and
                 on-camera participation.
               </p>
