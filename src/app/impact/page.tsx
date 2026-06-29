@@ -6,7 +6,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Our Impact',
   description:
-    'Measurable change for frontline communities — from Shingle Mountain to international climate delegations, Southern Sector Rising delivers results.',
+    'Southern Sector Rising delivers results. From Shingle Mountain to international climate deligations, we aim to bring measurable change for frontline communities.',
 };
 
 const STATS = [
@@ -82,7 +82,7 @@ const TIMELINE = [
   {
     year: '2022–Present',
     event: 'Park for Floral Farms',
-    desc: 'With Shingle Mountain gone, SSR advocates for the remediated site to become a public park — green space for a community that has waited decades for investment.',
+    desc: 'With Shingle Mountain gone, SSR advocates for the remediated site to become a public park. This green space is an investment that pours back into the community.',
     marker: 'ongoing',
   },
   {
@@ -98,14 +98,14 @@ const WINS = [
     tag: 'tag--forest',
     title: 'Shingle Mountain Removal',
     year: '2022',
-    desc: '200,000+ tons of toxic shingles removed from the Floral Farms neighborhood — a three-year campaign and a first-of-its-kind environmental justice victory in Texas.',
+    desc: '200,000+ tons of toxic shingles removed from the Floral Farms neighborhood. A three-year campaign and a first-of-its-kind environmental justice victory in Texas.',
     icon: <IconCheck size={18} />,
   },
   {
     tag: 'tag--sky',
     title: 'International Climate Representation',
     year: '2022–Present',
-    desc: 'Southern Sector Rising delegates have represented frontline communities at UN climate negotiations in Nairobi, Kenya and Rome, Italy — bringing South Dallas to the global stage.',
+    desc: 'Southern Sector Rising delegates have represented frontline communities at UN climate negotiations in Nairobi, Kenya and Rome, Italy, bringing South Dallas to the global stage.',
     icon: <IconGlobe size={18} />,
   },
   {
@@ -126,14 +126,14 @@ const WINS = [
     tag: 'tag--gold',
     title: '150+ Ally Coalition Built',
     year: '2019–Present',
-    desc: 'Built a coalition of over 150 allied organizations across environmental justice, labor, food sovereignty, and civil rights movements — a network that amplifies frontline voices.',
+    desc: 'Built a coalition of over 150 allied organizations across environmental justice, labor, food sovereignty, and civil rights movements, creating a network that amplifies frontline voices.',
     icon: <IconCheck size={18} />,
   },
   {
     tag: 'tag--sky',
     title: '"Marsha Jackson Day" Proclaimed',
     year: 'Dallas County',
-    desc: 'Dallas County officially proclaimed "Marsha Jackson Day" — recognition of Dr. Jackson\'s extraordinary leadership and lasting impact on the region.',
+    desc: 'Dallas County officially proclaimed "Marsha Jackson Day," a recognition of Dr. Jackson\'s extraordinary leadership and lasting impact on the region.',
     icon: <IconCheck size={18} />,
   },
 ];
@@ -226,8 +226,8 @@ export default function ImpactPage() {
               <p>
                 In 2019, the Floral Farms neighborhood in South Dallas became the site of one of
                 the most blatant acts of environmental racism in recent Texas history. A company
-                illegally dumped over 200,000 tons of construction shingles — a 30-foot mountain
-                of toxic debris — directly adjacent to a Black residential neighborhood.
+                illegally dumped over 200,000 tons of construction shingles, creating a 30-foot mountain
+                of toxic debris, directly adjacent to a Black residential neighborhood.
               </p>
               <p>
                 Residents reported burning eyes, difficulty breathing, and fear for their
@@ -241,18 +241,18 @@ export default function ImpactPage() {
                 excuses. They demanded justice.
               </p>
               <p>
-                In 2022 — after three years of relentless community organizing, legal battles,
-                national media coverage, and sustained political pressure — the last loads of
+                In 2022, after three years of relentless community organizing, legal battles,
+                national media coverage, and sustained political pressure, the last loads of
                 shingles were removed. The site was remediated. The mountain was moved.
               </p>
               <p>
-                It was the first victory of its kind in Texas. Proof that frontline communities,
+                It was the first victory of its kind in Texas. This is proof that frontline communities,
                 when organized and supported, can force accountability from institutions that
                 have long ignored them.
               </p>
               <p>
-                Now, Southern Sector Rising is advocating for the site to become a public park —
-                a permanent testament to what community power can accomplish.
+                Now, Southern Sector Rising is advocating for the site to become a public park.
+                A permanent testament to what community power can accomplish.
               </p>
             </div>
             <div className={styles.timeline}>
@@ -308,7 +308,7 @@ export default function ImpactPage() {
             <p className="eyebrow">In Action</p>
             <h2 className="section-title">Environmental Justice Symposium 2022</h2>
             <p className="section-desc">
-              Watch Southern Sector Rising in action — community voices, frontline leadership,
+              Watch Southern Sector Rising in action, and hear community voices, frontline leadership,
               and the organizing work that drives real change in South Dallas.
             </p>
           </div>
@@ -405,7 +405,7 @@ export default function ImpactPage() {
               </h2>
               <p>
                 Shingle Mountain was removed. Sandbranch still needs water. Floral Farms
-                deserves its park. And frontline communities around Dallas need organizing
+                deserves its park. Frontline communities around Dallas need organizing
                 support, legal help, and allies who will not look away.
               </p>
               <p>
