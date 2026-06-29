@@ -54,7 +54,7 @@ export default function ContactPage() {
           <h1 className={styles.heroTitle}>Contact Us</h1>
           <p className={styles.heroSubtitle}>We&rsquo;d Love to Hear From You</p>
           <p className={styles.heroDesc}>
-            Whether you have a question, a partnership idea, or want to connect,
+            Whether you have a question, a partnership suggestion, or want to connect,
             our team is here, and we love to hear from you.
           </p>
         </div>
