@@ -36,7 +36,7 @@ const PILLARS = [
     summary:
       'Challenging the racist zoning and land-use decisions that concentrate pollution, waste facilities, and industrial hazards in Black and Brown communities.',
     details: [
-      'Led the three-year campaign to remove Shingle Mountain — 200,000+ tons of toxic construction debris dumped next to a Black neighborhood in South Dallas',
+      'Led the three-year campaign to remove Shingle Mountain: 200,000+ tons of toxic construction debris dumped next to a Black neighborhood in South Dallas',
       'Monthly Environmental Justice Tours that educate hundreds of residents, students, and advocates each year',
       'Policy advocacy and testimony before city, county, and state environmental agencies',
       'Legal support and documentation of illegal dumping, zoning violations, and permitting abuses',
@@ -52,7 +52,7 @@ const PILLARS = [
     summary:
       'Ensuring that frontline communities are not only protected from climate harm but empowered to shape the climate policies that affect their lives.',
     details: [
-      'International climate delegation representation — including UN climate negotiations in Nairobi, Kenya and Rome, Italy',
+      'International climate delegation representation including UN climate negotiations in Nairobi, Kenya and Rome, Italy',
       'Community climate education workshops and resilience planning',
       'Connecting Dallas frontline neighborhoods to national and international climate justice networks',
       'Advocating for equitable green infrastructure investment in underserved communities',
@@ -66,7 +66,7 @@ const PILLARS = [
     tagLabel: 'Pillar Three',
     title: 'Food Sovereignty',
     summary:
-      'Building community power over food systems — because healthy food access is an environmental justice issue, and food deserts are not accidents.',
+      'Building community power over food systems- because healthy food access is an environmental justice issue, and food deserts are not accidents.',
     details: [
       'Community gardens and urban agriculture programs in South Dallas food deserts',
       'Food access partnerships with local growers, co-ops, and faith institutions',
@@ -88,7 +88,7 @@ const PILLARS = [
       'Economic development programs rooted in community ownership',
       'Coalition-building with labor unions and worker centers across the Dallas area',
       'Advocacy against wage theft, unsafe conditions, and exploitation of immigrant workers',
-      'Connecting environmental and labor justice — clean environment and dignified work go together',
+      'Connecting environmental and labor justice, because clean environment and dignified work go together',
     ],
     accentColor: 'var(--color-forest)',
   },
@@ -120,9 +120,9 @@ const PROJECTS = [
     title: 'Park for Floral Farms',
     subtitle: 'Transforming a toxic site into community green space',
     body: [
-      'For years, the Floral Farms neighborhood in South Dallas was home to Shingle Mountain — a 30-foot, 200,000+ ton pile of toxic construction shingles dumped illegally next to a Black residential community.',
+      'For years, the Floral Farms neighborhood in South Dallas was home to Shingle Mountain: a 30-foot, 200,000+ ton pile of toxic construction shingles dumped illegally next to a Black residential community.',
       'After three years of organizing, legal battles, and relentless community pressure, Shingle Mountain was fully removed in 2022. The site is now remediated. But the community\'s vision does not end there.',
-      'Southern Sector Rising is advocating with the City of Dallas and Dallas County to transform the remediated site into a public park — green space that Floral Farms residents have long been denied. This park would be a living symbol of community power: a mountain of harm turned into a place of healing.',
+      'Southern Sector Rising is advocating with the City of Dallas and Dallas County to transform the remediated site into a public park featuring green space that Floral Farms residents have long been denied. This park would be a living symbol of community power: a mountain of harm turned into a place of healing.',
     ],
     stats: [
       { num: '200,000+', label: 'Tons removed' },
@@ -146,7 +146,7 @@ const PROJECTS = [
     subtitle: 'Clean water for a freedmen\'s community still off the grid',
     body: [
       'Sandbranch is an unincorporated community in Dallas County with an 87% Black population, many of whom are descendants of freed enslaved people who built this community generations ago. Despite being just outside Dallas, Sandbranch still lacks connection to the municipal water system.',
-      'Residents have been transporting water or relying on wells that do not meet safe drinking water standards for decades. This is not a rural backwater problem; it is a product of deliberate disinvestment in a Black community that the county has long ignored.',
+      'Residents have been transporting water or relying on wells that do not meet safe drinking water standards for decades. This is not simply a rural backwater problem; the crisis is a product of deliberate disinvestment in a Black community that the county has long ignored.',
       'Southern Sector Rising delivers clean water to Sandbranch on an ongoing basis and is a leading advocate for permanent infrastructure investment. We are demanding that Dallas County fulfill its obligation to these residents.',
     ],
     stats: [
@@ -172,7 +172,7 @@ const PROJECTS = [
     body: [
       'Knowing is the first step. Southern Sector Rising leads monthly Environmental Justice Tours through South Dallas and surrounding areas, giving participants a firsthand look at the environmental conditions facing frontline communities.',
       'Tours visit sites of illegal dumping, industrial facilities located next to residential neighborhoods, areas with limited green space, and communities still fighting for clean water and air. Tour participants include students, researchers, faith communities, policymakers, and concerned citizens.',
-      'These tours are not just educational — they are organizing tools. Many of our most dedicated volunteers and partners first connected with SSR through an EJ Tour. We are building an informed, activated public one tour at a time.',
+      'These tours serve as educational and organizing tools. Many of our most dedicated volunteers and partners first connected with SSR through an EJ Tour. We are building an informed, activated public one tour at a time.',
     ],
     stats: [
       { num: 'Monthly', label: 'Tour frequency' },
@@ -229,7 +229,7 @@ export default function OurWorkPage() {
               <p>
                 Our five pillars — Environmental Justice, Climate Resilience, Food Sovereignty,
                 Labor &amp; Economic Justice, and Community HUBs — address these challenges as
-                the integrated system they are. This is not charity. This is structural change,
+                the integrated system they are. This is structural change
                 led by the people who know what is needed most.
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function OurWorkPage() {
             <p className="eyebrow">Our Framework</p>
             <h2 className="section-title">Five Pillars of Justice</h2>
             <p className="section-desc">
-              Each pillar represents a domain where frontline communities face systemic harm —
+              Each pillar represents a domain where frontline communities face systemic harm
               and where community-led organizing can create lasting change.
             </p>
           </div>
@@ -282,7 +282,7 @@ export default function OurWorkPage() {
             <p className="eyebrow">Current Focus</p>
             <h2 className="section-title">Active Projects</h2>
             <p className="section-desc">
-              Three campaigns at the heart of our current work — each rooted in a
+              Three campaigns at the heart of our current work, each rooted in a
               specific community need and connected to our broader mission.
             </p>
           </div>
@@ -361,7 +361,7 @@ export default function OurWorkPage() {
               <h2 className={styles.globalTitle}>Our Reach Is Global</h2>
               <p>
                 Environmental justice is a global fight. Southern Sector Rising has taken the
-                voices of Dallas frontline communities to international stages — including
+                voices of Dallas frontline communities to international stages, including
                 UN climate negotiations in Nairobi, Kenya and Rome, Italy.
               </p>
               <p>
@@ -398,7 +398,7 @@ export default function OurWorkPage() {
             <p className="eyebrow">In the Field</p>
             <h2 className="section-title">Photo Gallery</h2>
             <p className="section-desc">
-              From Kenya to Rome to the streets of South Dallas — moments from SSR&rsquo;s work around the world.
+              From Kenya to Rome to the streets of South Dallas: Moments from SSR&rsquo;s work around the world.
             </p>
           </div>
           <PhotoGallery items={GALLERY_ITEMS} />
@@ -413,7 +413,7 @@ export default function OurWorkPage() {
               <p className="eyebrow">Get Involved</p>
               <h2 className={styles.ctaTitle}>Want to Support Our Work?</h2>
               <p>
-                Your contribution — whether time, money, or advocacy — directly fuels frontline
+                Your contribution, whether time, money, or advocacy, directly fuels frontline
                 community organizing across Dallas and beyond.
               </p>
             </div>
