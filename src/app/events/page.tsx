@@ -54,7 +54,7 @@ const PAST_EVENTS = [
   },
   {
     title: 'Shingle Mountain Victory Celebration',
-    desc: 'After years of organizing, SSR and community partners celebrated the removal of Shingle Mountain \u2014 a 70-foot-tall illegal dump of toxic roofing shingles \u2014 from the Floral Farms neighborhood in South Dallas.',
+    desc: 'After years of organizing, SSR and community partners celebrated the removal of Shingle Mountain, a 70-foot-tall illegal dump of toxic roofing shingles, from the Floral Farms neighborhood in South Dallas.',
   },
 ];
 
@@ -107,8 +107,7 @@ export default function EventsPage() {
               <h2 className={styles.featuredTitle}>Juneteenth 2026</h2>
               <p className={styles.featuredDesc}>
                 Join Southern Sector Rising for our annual Juneteenth celebration honoring
-                freedom, community, and the ongoing fight for justice. This is more than a
-                commemoration \u2014 it\u2019s a call to action. Featuring local artists,
+                freedom, community, and the ongoing fight for justice. Featuring local artists,
                 speakers, community resources, live music, and food. All are welcome.
               </p>
               <p className={styles.featuredDesc}>
@@ -133,7 +132,7 @@ export default function EventsPage() {
             <h2 className="section-title">Ways to Show Up Year-Round</h2>
             <p className="section-desc">
               These recurring programs are the heartbeat of our organizing work.
-              Jump in whenever you\u2019re ready.
+              Jump in whenever you're ready.
             </p>
           </div>
           <div className={styles.eventsGrid}>
