@@ -31,12 +31,12 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'Twitter / X',
-    href: 'https://twitter.com/southernsectorrising',
+    href: 'https://x.com/SoSectorRising',
     Icon: IconTwitterX,
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/company/southernsectorrising',
+    href: 'https://www.linkedin.com/company/southern-sector-rising/',
     Icon: IconLinkedIn,
   },
 ];
