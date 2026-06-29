@@ -176,7 +176,7 @@ export default function AboutPage() {
               </p>
               <p>
                 After three years of relentless organizing, legal battles, and international media
-                attention, Shingle Mountain was removed. All 200,000+ tons. It was a landmark
+                attention, Shingle Mountain was removed. Over 200,000 tons. It was a landmark
                 victory, and proof that frontline communities, when organized and supported, can move
                 mountains. Literally.
               </p>
