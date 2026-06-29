@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Allies & Partners | Southern Sector Rising',
   description:
-    'SSR draws power from 150+ allied organizations across environmental justice, climate action, food sovereignty, labor rights, and international advocacy.',
+    'SSR draws power from over 150 allied organizations across environmental justice, climate action, food sovereignty, labor rights, and international advocacy.',
 };
 
 const STATS = [
