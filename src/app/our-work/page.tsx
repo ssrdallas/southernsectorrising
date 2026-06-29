@@ -145,9 +145,9 @@ const PROJECTS = [
     title: 'Sandbranch Water Project',
     subtitle: 'Clean water for a freedmen\'s community still off the grid',
     body: [
-      'Sandbranch is an unincorporated community in Dallas County with an 87% Black population — descendants of freed enslaved people who built this community generations ago. Despite being just outside a major American city, Sandbranch still lacks connection to the municipal water system.',
-      'Residents have been hauling water or relying on wells that do not meet safe drinking water standards. This is not a rural backwater problem — it is a product of deliberate disinvestment in a Black community that the county has long ignored.',
-      'Southern Sector Rising delivers clean water to Sandbranch on an ongoing basis and is a leading advocate for permanent infrastructure investment. We are not just delivering water — we are demanding that Dallas County fulfill its obligation to these residents.',
+      'Sandbranch is an unincorporated community in Dallas County with an 87% Black population, many of whom are descendants of freed enslaved people who built this community generations ago. Despite being just outside Dallas, Sandbranch still lacks connection to the municipal water system.',
+      'Residents have been transporting water or relying on wells that do not meet safe drinking water standards for decades. This is not a rural backwater problem; it is a product of deliberate disinvestment in a Black community that the county has long ignored.',
+      'Southern Sector Rising delivers clean water to Sandbranch on an ongoing basis and is a leading advocate for permanent infrastructure investment. We are demanding that Dallas County fulfill its obligation to these residents.',
     ],
     stats: [
       { num: '87%', label: 'Black residents' },
