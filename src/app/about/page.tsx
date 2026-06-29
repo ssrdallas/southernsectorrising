@@ -123,7 +123,7 @@ const VALUES = [
     tag: 'tag--sky',
     tagLabel: 'Core Principle',
     title: 'Global Justice',
-    desc: 'The issues facing South Dallas are not isolated — they are part of a global pattern of environmental racism. We connect local struggles to international climate policy, bringing Dallas voices to the world stage.',
+    desc: 'The issues facing South Dallas are not isolated; they are part of a global pattern of environmental racism. We connect local struggles to international climate policy, bringing Dallas voices to the world stage.',
     icon: <IconGlobe size={24} />,
   },
 ];
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 mountain of toxic shingles had been illegally dumped directly next to their homes.
               </p>
               <p>
-                Floral Farms is a predominantly Black community — a community that had already
+                Floral Farms is a predominantly Black community; a community that had already
                 endured decades of racist zoning practices that pushed industrial facilities, salvage
                 yards, and waste sites into their neighborhood while wealthier, whiter areas of
                 Dallas remained protected. Shingle Mountain was not an accident. It was the latest
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 health. Government agencies moved slowly. Promises went unfulfilled.
               </p>
               <p>
-                So the community organized. Led by Dr. Marsha Jackson — a resident of Floral Farms —
+                So the community organized. Led by Dr. Marsha Jackson, a resident of Floral Farms,
                 neighbors joined forces, filed complaints, rallied allies, engaged media, and took
                 their fight all the way to the Texas Commission on Environmental Quality, the
                 City of Dallas, and beyond.
@@ -177,7 +177,7 @@ export default function AboutPage() {
               <p>
                 After three years of relentless organizing, legal battles, and international media
                 attention, Shingle Mountain was removed. All 200,000+ tons. It was a landmark
-                victory — proof that frontline communities, when organized and supported, can move
+                victory, and proof that frontline communities, when organized and supported, can move
                 mountains. Literally.
               </p>
               <p>
@@ -240,7 +240,7 @@ export default function AboutPage() {
                 When Shingle Mountain appeared in her neighborhood, Dr. Jackson did not wait for
                 someone else to act. She documented the conditions, organized her neighbors, and
                 built a campaign that ultimately forced the removal of over 200,000 tons of toxic
-                shingles — a first-of-its-kind environmental justice victory in Texas.
+                shingles. This was a first-of-its-kind environmental justice victory in Texas.
               </p>
               <p>
                 Her work has taken her from Floral Farms to the United Nations climate negotiations
@@ -249,7 +249,7 @@ export default function AboutPage() {
                 earned recognition from organizations across the country.
               </p>
               <p>
-                Dr. Jackson&rsquo;s leadership is rooted in the understanding that environmental
+                Dr. Jackson's leadership is rooted in the understanding that environmental
                 justice is inseparable from racial justice, economic justice, and the right of
                 every community to live with dignity and health.
               </p>
