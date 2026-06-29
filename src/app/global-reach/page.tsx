@@ -7,14 +7,14 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Global Reach | Southern Sector Rising',
   description:
-    'From Southern Dallas to international delegations — SSR represents frontline communities on the world stage through climate justice advocacy.',
+    'From Southern Dallas to international delegations, SSR represents frontline communities on the world stage through climate justice advocacy.',
 };
 
 const GEOGRAPHIC_LEVELS = [
   {
     level: 'Local',
     subtitle: 'Southern Dallas / Floral Farms',
-    desc: 'Grounded in the communities we serve — Floral Farms, Shingle Mountain, Sandbranch, and the broader Southern Sector of Dallas.',
+    desc: 'Grounded in the communities we serve: Floral Farms, Shingle Mountain, Sandbranch, and the broader Southern Sector of Dallas.',
     tag: 'tag--forest',
     detail: 'Where we live, organize, and fight',
   },
@@ -28,7 +28,7 @@ const GEOGRAPHIC_LEVELS = [
   {
     level: 'National',
     subtitle: 'US Environmental Justice Network',
-    desc: 'Connected to the national EJ movement — partnering with frontline organizations across the country to demand federal policy change.',
+    desc: 'Connected to the national EJ movement, partnering with frontline organizations across the country to demand federal policy change.',
     tag: 'tag--gold',
     detail: '150+ national allies',
   },
@@ -47,7 +47,7 @@ const DELEGATIONS = [
     badge: 'Africa',
     tagClass: 'tag--forest',
     title: 'Kenya Climate Justice Delegation',
-    desc: 'Dr. Marsha Jackson joined a delegation of environmental justice leaders traveling to Kenya for a UN-affiliated climate justice convening. The delegation centered the voices of frontline, BIPOC, and Global South communities most impacted by the climate crisis — communities who have contributed least to carbon emissions but suffer the most.',
+    desc: 'Dr. Marsha Jackson joined a delegation of environmental justice leaders traveling to Kenya for a UN-affiliated climate justice convening. The delegation centered the voices of frontline, BIPOC, and Global South communities most impacted by the climate crisis. These communities contribute the least to carbon emissions but suffer the most.',
     highlights: [
       'UN-affiliated climate justice convening',
       'Solidarity with Global South frontline communities',
@@ -55,7 +55,7 @@ const DELEGATIONS = [
       'Building international EJ advocacy networks',
     ],
     img: '/images/global/delegation-kenya.jpg',
-    imgAlt: 'Taproot Earth climate justice convening — Kenya delegation',
+    imgAlt: 'Taproot Earth climate justice convening: Kenya delegation',
   },
   {
     country: 'Rome, Italy',
@@ -70,7 +70,7 @@ const DELEGATIONS = [
       'Faith and justice coalitions',
     ],
     img: '/images/global/delegation-rome.jpg',
-    imgAlt: 'SSR delegation gathering — Rome, Italy',
+    imgAlt: 'SSR delegation gathering: Rome, Italy',
   },
 ];
 
@@ -129,8 +129,8 @@ export default function GlobalReachPage() {
             <p className="eyebrow">Our Reach</p>
             <h2 className="section-title">Four Levels of Impact</h2>
             <p className="section-desc">
-              Southern Sector Rising operates simultaneously at every scale — from our neighborhood
-              blocks to the global stage — because justice at any level requires justice at all levels.
+              Southern Sector Rising operates simultaneously at every scale. From our neighborhood
+              blocks to the global stage, we understand that justice at any level requires justice at all levels.
             </p>
           </div>
           <div className={styles.levelsGrid}>
@@ -157,8 +157,7 @@ export default function GlobalReachPage() {
             <p className="eyebrow">International Delegations</p>
             <h2 className="section-title">Dr. Marsha Jackson on the World Stage</h2>
             <p className="section-desc">
-              When our community&rsquo;s story travels internationally, it builds solidarity —
-              and solidarity builds power.
+              When our community&rsquo;s story travels internationally, it builds power and creates solidarity.
             </p>
           </div>
 
@@ -239,7 +238,7 @@ export default function GlobalReachPage() {
               <h2 style={{ color: 'var(--color-white)' }}>Local Roots, Global Stakes</h2>
               <p>
                 The illegal dumping of a shingle mountain in Southern Dallas is not an isolated
-                incident — it is part of a global pattern of environmental racism in which
+                incident. This is one of the many stories indicating a global pattern of environmental racism in which
                 polluting industries locate their worst practices in communities with the least
                 political power. These communities are disproportionately Black, Brown, Indigenous,
                 and poor.
@@ -253,7 +252,7 @@ export default function GlobalReachPage() {
               <p>
                 When Dr. Marsha Jackson stands in Rome or Nairobi and tells the story of
                 Southern Dallas, she is saying: <em>your fight and our fight are the same fight.</em>
-                Solidarity across borders is not abstract — it is how movements win.
+                Solidarity across borders is how movements win.
               </p>
             </div>
             <div className={styles.whyGlobalAside}>
@@ -307,7 +306,7 @@ export default function GlobalReachPage() {
               <h2>Connect With Our Work</h2>
               <p className="lead">
                 Whether you&rsquo;re a community member, researcher, journalist, or
-                international partner — we want to hear from you.
+                international partner, we want to hear from you.
               </p>
             </div>
             <div className={styles.ctaButtons}>
