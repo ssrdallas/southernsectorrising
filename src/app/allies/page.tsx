@@ -35,7 +35,7 @@ const PARTNER_CATEGORIES: { category: string; tagClass: string; desc: string; pa
     partners: [
       { name: 'Society of Native Nations',         src: '/images/partners/society-native-nations.png' },
       { name: 'Carrizo Comecrudo Tribe of Texas',  src: '/images/partners/carrizo-comecrudo-tribe.png' },
-      { name: 'Downwinders at Risk',               src: null },
+      { name: 'Downwinders at Risk',               src: '/images/partners/downwinders.png' },
     ],
   },
   {
@@ -67,7 +67,7 @@ const PARTNER_CATEGORIES: { category: string; tagClass: string; desc: string; pa
       { name: 'Dallas Housing Coalition',       src: '/images/partners/dallas-housing-coalition.png' },
       { name: 'Texas Organizing Project (TOP)', src: '/images/partners/texas-organizing-project.png' },
       { name: 'Sandbranch D&WSC',               src: '/images/partners/sandbranch-dwsc.png' },
-      { name: 'Friendship West Baptist Church', src: null },
+      { name: 'Friendship West Baptist Church', src: '/images/partners/friendshipwest.png' },
     ],
   },
 ];
@@ -82,7 +82,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "We've been proud to stand alongside SSR in the fight for clean air and water in Southern Dallas. Dr. Jackson's leadership reminds us that frontline communities aren't just victims — they are the movement's leaders.",
+      "We've been proud to stand alongside SSR in the fight for clean air and water in Southern Dallas. Dr. Jackson's leadership reminds us that frontline communities are more than helpless victims. Oftentimes, community members serve as leaders of the movement's voice.",
     org: 'National Climate Advocacy Alliance',
     role: 'Policy Director',
     tagClass: 'tag--sky',
@@ -114,7 +114,7 @@ export default function AlliesPage() {
           <p className={styles.heroSubtitle}>150+ Organizations. One Movement.</p>
           <p className={styles.heroDesc}>
             Southern Sector Rising has never fought alone. Our strength comes from a deep
-            coalition of aligned organizations- local, national, and international- who
+            coalition of aligned organizations at all levels who
             believe that justice is indivisible.
           </p>
           <div className={styles.heroCta}>
@@ -152,7 +152,7 @@ export default function AlliesPage() {
               </p>
               <p>
                 From Dallas neighborhood groups to national environmental justice networks,
-                from labor unions to international climate delegations — our coalition reflects
+                from labor unions to international climate delegations, our coalition reflects
                 the breadth of the fight for a just, equitable, and livable world.
               </p>
               <p>
@@ -187,7 +187,7 @@ export default function AlliesPage() {
             <h2 className="section-title">Allies Across Movements</h2>
             <p className="section-desc">
               Our coalition spans the environmental justice, climate action, and movement-building
-              sectors. Each relationship is grounded in the Jemez Principles.
+              sectors. Each relationship is grounded in the Jemez Principles at its core.
             </p>
           </div>
 
@@ -239,7 +239,7 @@ export default function AlliesPage() {
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
                 Are you an organization aligned with our mission? We believe in building power
                 together. Whether you&rsquo;re a grassroots group, a national nonprofit, a faith
-                community, or a labor union — if you are committed to environmental, racial, and
+                community, or a labor union, if you are committed to environmental, racial, and
                 economic justice, we want to build with you.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
