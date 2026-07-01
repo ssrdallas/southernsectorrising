@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL = 'https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview';
+const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL_2 = 'https://drive.google.com/file/d/1Eu62L1bjTZ7oHC7-3eIWnGZGq2eRCS7V/preview';
 
 const PRESS_ARTICLES = [
   {
@@ -293,6 +294,15 @@ export default function MediaPage() {
               <iframe
                 src={EVENT_HIGHLIGHTS_VIDEO_EMBED_URL}
                 title="2026 Juneteenth Freedom Day — Southern Sector Rising"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
+            </div>
+            <div className={styles.ejSymposiumVideo} style={{ marginTop: '1.5rem' }}>
+              <iframe
+                src={EVENT_HIGHLIGHTS_VIDEO_EMBED_URL_2}
+                title="2026 Juneteenth Freedom Day — Southern Sector Rising — Additional Video"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}

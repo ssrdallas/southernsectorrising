@@ -146,7 +146,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <p className="eyebrow">Event Highlights</p>
-            <h2 className="section-title">Sandbranch Mini-Documentary</h2>
+            <h2 className="section-title">Sandbranch Mini-Documentaries</h2>
           </div>
           <div className={styles.eventHighlightsCard}>
             <div className={styles.eventHighlightsText}>
@@ -160,14 +160,24 @@ export default function HomePage() {
                 Click here to view media
               </Link>
             </div>
-            <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsMedia} aria-label="View the Sandbranch mini-documentary on the media page">
-              <iframe
-                src="https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview"
-                title="2026 Juneteenth Freedom Day"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
-            </Link>
+            <div>
+              <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsMedia} aria-label="View the Sandbranch mini-documentary on the media page">
+                <iframe
+                  src="https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview"
+                  title="2026 Juneteenth Freedom Day"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </Link>
+              <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsMedia} aria-label="View the additional Sandbranch mini-documentary on the media page" style={{ marginTop: '1rem' }}>
+                <iframe
+                  src="https://drive.google.com/file/d/1Eu62L1bjTZ7oHC7-3eIWnGZGq2eRCS7V/preview"
+                  title="2026 Juneteenth Freedom Day — Additional Video"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
