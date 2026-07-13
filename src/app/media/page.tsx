@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL = 'https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview';
 const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL_2 = 'https://drive.google.com/file/d/1Eu62L1bjTZ7oHC7-3eIWnGZGq2eRCS7V/preview';
 
+const buildExternalSearchUrl = (query: string) =>
+  `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
 const PRESS_ARTICLES = [
   {
     title: 'The Woman Who Fought to Tear Down Shingle Mountain is Celebrated at Museum Exhibit',
@@ -19,7 +22,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--gold',
     type: 'Feature',
     desc: 'For her installation at the Dallas Museum of Art, artist Ari Brielle chose to highlight Floral Farms resident Marsha Jackson and her fight to remove Shingle Mountain.',
-    href: '#',
+    href: 'https://www.keranews.org/arts-culture/2022-02-24/dallas-woman-who-fought-to-tear-down-shingle-mountain-is-celebrated-in-museum-exhibit',
   },
   {
     title: 'In Texas, Residents Are Dying To Breathe Clean Air',
@@ -27,15 +30,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--sky',
     type: 'Investigative',
     desc: 'National investigative reporting on the health impacts residents are facing in communities like Southern Dallas, documenting the direct human cost of living near industrial pollution and illegal dumping sites.',
-    href: '#',
-  },
-  {
-    title: 'Environmental Justice in South Dallas',
-    outlet: 'KERA / Dallas PBS',
-    outletTag: 'tag--forest',
-    type: 'Local TV',
-    desc: 'Dallas Public Broadcasting\'s deep-dive into the environmental justice crisis in the Southern Sector, featuring Dr. Marsha Jackson and the community fight against Shingle Mountain.',
-    href: '#',
+    href: 'https://earthjustice.org/action/texas-residents-deserve-to-breathe-clean-air',
   },
   {
     title: 'Shingle Mountain Removed After Years of Community Activism',
@@ -43,7 +38,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--gold',
     type: 'News',
     desc: 'Coverage of the landmark victory: the removal of the illegally-dumped shingle mountain that sat next to the Floral Farms neighborhood for years. This is a win driven entirely by community organizing.',
-    href: '#',
+    href: 'https://www.nbcdfw.com/news/local/shingle-mountain-removed-from-southern-dallas-neighborhood-neighbors-say/2566074/',
   },
   {
     title: 'Dallas Activist Named Sierra Club Environmentalist of the Year',
@@ -51,7 +46,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--forest',
     type: 'Award',
     desc: 'Recognition of Dr. Marsha Jackson\'s 2019 Sierra Club Lone Star Chapter Environmentalist of the Year award. This is one of several honors for her leadership in the Southern Dallas environmental justice movement.',
-    href: '#',
+    href: 'https://canvasrebel.com/meet-marsha-jackson/',
   },
   {
     title: 'BET Documentary Shines Light on South Dallas Environmental Crisis',
@@ -59,7 +54,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--sky',
     type: 'Feature',
     desc: 'Coverage of BET\'s "Disrupt & Dismantle with Soledad O\'Brien" documentary feature on Shingle Mountain and Dr. Jackson\'s three-year battle, bringing national attention to environmental racism in Dallas.',
-    href: '#',
+    href: 'https://www.bet.com/phoenix-awards/video/sm9asm/disrupt-dismantle-disrupt-and-dismantle-tackles-shingle-mountain',
   },
   {
     title: 'Marsha Jackson Day Declared by Dallas County',
@@ -67,7 +62,7 @@ const PRESS_ARTICLES = [
     outletTag: 'tag--gold',
     type: 'Honor',
     desc: 'Dallas County officially declared a "Marsha Jackson Day" in recognition of Dr. Jackson\'s extraordinary contributions to environmental justice and the health and safety of Southern Dallas communities.',
-    href: '#',
+    href: 'https://www.hksinc.com/our-news/articles/dallas-activist-marsha-jackson-honored-as-mountain-mover/',
   },
 ];
 
@@ -325,7 +320,7 @@ export default function MediaPage() {
             </p>
           </div>
           <div className={styles.pressGrid}>
-            {PRESS_ARTICLES.map(({ title, outlet, outletTag, type, desc }) => (
+            {PRESS_ARTICLES.map(({ title, outlet, outletTag, type, desc, href }) => (
               <article key={title} className={`card ${styles.pressCard}`}>
                 <div className={styles.pressCardHeader}>
                   <span className={`tag ${outletTag}`}>{outlet}</span>
@@ -333,7 +328,7 @@ export default function MediaPage() {
                 </div>
                 <h3 className={styles.pressTitle}>{title}</h3>
                 <p className={styles.pressDesc}>{desc}</p>
-                <a href="#" className="link-arrow">Read article</a>
+                <a href={href} target="_blank" rel="noopener noreferrer" className="link-arrow">Read article</a>
               </article>
             ))}
           </div>
