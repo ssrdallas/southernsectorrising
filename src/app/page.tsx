@@ -248,7 +248,7 @@ export default function HomePage() {
             <h2 className="section-title" style={{ color: 'var(--color-white)' }}>
               From Dallas to the World
             </h2>
-            className="section-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            <p className="section-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
               Environmental justice is a global fight. SSR represents frontline communities on the international stage.
       
           </div>
