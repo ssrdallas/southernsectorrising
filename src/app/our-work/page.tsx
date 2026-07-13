@@ -236,45 +236,7 @@ export default function OurWorkPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Five Pillars ── */}
-      <section className="section section--sand">
-        <div className="container">
-          <div className="section-header">
-            <p className="eyebrow">Our Framework</p>
-            <h2 className="section-title">Five Pillars of Justice</h2>
-            <p className="section-desc">
-              Each pillar represents a domain where frontline communities face systemic harm
-              and where community-led organizing can create lasting change.
-            </p>
-          </div>
-          <div className={styles.pillarsStack}>
-            {PILLARS.map(({ number, tag, tagLabel, title, summary, details, accentColor }) => (
-              <div key={number} className={styles.pillarRow} style={{ '--pillar-accent': accentColor } as React.CSSProperties}>
-                <div className={styles.pillarLeft}>
-                  <span className={styles.pillarNumber}>{number}</span>
-                  <span className={`tag ${tag}`}>{tagLabel}</span>
-                  <h3 className={styles.pillarTitle}>{title}</h3>
-                  <p className={styles.pillarSummary}>{summary}</p>
-                </div>
-                <div className={styles.pillarRight}>
-                  <ul className={styles.pillarDetails}>
-                    {details.map((item) => (
-                      <li key={item} className={styles.pillarDetailItem}>
-                        <span className={styles.pillarCheck}>
-                          <IconCheck size={14} />
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* ── Active Projects ── */}
       <section className="section section--cream">
         <div className="container">
@@ -347,6 +309,44 @@ export default function OurWorkPage() {
                   )}
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+        {/* ── Five Pillars ── */}
+      <section className="section section--sand">
+        <div className="container">
+          <div className="section-header">
+            <p className="eyebrow">Our Framework</p>
+            <h2 className="section-title">Five Pillars of Justice</h2>
+            <p className="section-desc">
+              Each pillar represents a domain where frontline communities face systemic harm
+              and where community-led organizing can create lasting change.
+            </p>
+          </div>
+          <div className={styles.pillarsStack}>
+            {PILLARS.map(({ number, tag, tagLabel, title, summary, details, accentColor }) => (
+              <div key={number} className={styles.pillarRow} style={{ '--pillar-accent': accentColor } as React.CSSProperties}>
+                <div className={styles.pillarLeft}>
+                  <span className={styles.pillarNumber}>{number}</span>
+                  <span className={`tag ${tag}`}>{tagLabel}</span>
+                  <h3 className={styles.pillarTitle}>{title}</h3>
+                  <p className={styles.pillarSummary}>{summary}</p>
+                </div>
+                <div className={styles.pillarRight}>
+                  <ul className={styles.pillarDetails}>
+                    {details.map((item) => (
+                      <li key={item} className={styles.pillarDetailItem}>
+                        <span className={styles.pillarCheck}>
+                          <IconCheck size={14} />
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))}
           </div>
         </div>
