@@ -287,8 +287,7 @@ export default function AlliesPage() {
                 </p>
                 <footer className={styles.testimonialFooter}>
                   <div className={styles.testimonialOrg}>
-                    <span className={`tag ${tagClass}`}>Allied Org</span>
-                    <span className={styles.testimonialOrgName}>{org}</span>
+                    <span className={`tag ${tagClass}`}>{org}</span>
                     <span className={styles.testimonialRole}>{role}</span>
                   </div>
                 </footer>

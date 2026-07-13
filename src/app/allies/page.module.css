@@ -358,18 +358,13 @@
 .testimonialFooter {
   padding-top: var(--space-sm);
   border-top: 1px solid var(--color-gray-light);
+  margin-top: auto;
 }
 
 .testimonialOrg {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-}
-
-.testimonialOrgName {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-forest);
 }
 
 .testimonialRole {
