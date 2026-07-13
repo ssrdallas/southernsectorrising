@@ -106,3 +106,49 @@ export function IconGlobe({ size = 20, className }: IconProps) {
     </svg>
   );
 }
+
+export function IconLeaf({ size = 20, className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+         width={size} height={size} className={className} aria-hidden="true">
+      <path d="M5 19c4.5-1.5 7-4 9-8 2-4 5-7 5-7s-3 3-7 5c-4 2-6.5 4.5-7 10z" />
+      <path d="M5 19c1.5-2.5 3.5-4 6-5" />
+    </svg>
+  );
+}
+
+export function IconUsers({ size = 20, className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+         width={size} height={size} className={className} aria-hidden="true">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+      <circle cx="9.5" cy="7" r="3" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+export function IconSparkles({ size = 20, className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+         width={size} height={size} className={className} aria-hidden="true">
+      <path d="M12 3l1.4 4.6L18 9l-4.6 1.4L12 15l-1.4-4.6L6 9l4.6-1.4L12 3z" />
+      <path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14z" />
+      <path d="M5 14l.7 2.3L8 17l-2.3.7L5 20l-.7-2.3L2 17l2.3-.7L5 14z" />
+    </svg>
+  );
+}
+
+export function IconNetwork({ size = 20, className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+         width={size} height={size} className={className} aria-hidden="true">
+      <circle cx="6" cy="8" r="3" />
+      <circle cx="18" cy="8" r="3" />
+      <circle cx="12" cy="18" r="3" />
+      <path d="M8.6 10.2L15.4 15.8" />
+      <path d="M15.4 10.2L8.6 15.8" />
+    </svg>
+  );
+}

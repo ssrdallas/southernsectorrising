@@ -1,7 +1,17 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconGlobe, IconPin, IconCheck, IconMail } from '@/components/icons/SocialIcons';
+import {
+  IconGlobe,
+  IconPin,
+  IconCheck,
+  IconMail,
+  IconLeaf,
+  IconShield,
+  IconSparkles,
+  IconUsers,
+  IconNetwork,
+} from '@/components/icons/SocialIcons';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -75,12 +85,12 @@ const DELEGATIONS = [
 ];
 
 const GLOBAL_PARTNERS = [
-  { name: 'Global South Climate Coalition', region: 'International' },
-  { name: 'African Environmental Justice Alliance', region: 'Africa' },
-  { name: 'European Climate Justice Network', region: 'Europe' },
-  { name: 'UN Climate Justice Working Group', region: 'United Nations' },
-  { name: 'Indigenous Climate Action', region: 'Global' },
-  { name: 'International Pesticide Network', region: 'Global' },
+  { name: 'Global South Climate Coalition', region: 'International', icon: IconLeaf, image: '/images/partners/global south climate coalition.png', logoBg: '#ffffff' },
+  { name: 'African Environmental Justice Alliance', region: 'Africa', icon: IconShield, image: '/images/partners/african environmental justice alliance.png', logoBg: '#ffffff' },
+  { name: 'European Climate Justice Network', region: 'Europe', icon: IconSparkles, image: '/images/partners/european climate justice network.jpg' },
+  { name: 'UN Climate Justice Working Group', region: 'United Nations', icon: IconGlobe, image: '/images/partners/UN climate justice working group.png' },
+  { name: 'Indigenous Climate Action', region: 'Global', icon: IconUsers, image: '/images/partners/indigenous climate action.jpg' },
+  { name: 'International Pesticide Network', region: 'Global', icon: IconNetwork, image: '/images/partners/internation pesticide action.png' },
 ];
 
 const LOCATION_BADGES = [
@@ -210,11 +220,14 @@ export default function GlobalReachPage() {
             </p>
           </div>
           <div className={styles.partnersGrid}>
-            {GLOBAL_PARTNERS.map(({ name, region }) => (
+            {GLOBAL_PARTNERS.map(({ name, region, icon: IconComponent, image, logoBg }) => (
               <div key={name} className={styles.partnerCard}>
-                <div className={styles.partnerLogo}>
-                  {/* TODO: replace with <Image src={`/images/partners/${slug}.png`} fill alt={name} /> */}
-                  <IconGlobe size={28} />
+                <div className={styles.partnerLogo} style={{ backgroundColor: logoBg }}>
+                  {image ? (
+                    <Image src={image} fill alt={name} style={{ objectFit: 'contain' }} />
+                  ) : (
+                    <IconComponent size={28} />
+                  )}
                 </div>
                 <div className={styles.partnerInfo}>
                   <span className="tag tag--sky">{region}</span>
