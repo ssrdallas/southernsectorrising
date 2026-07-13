@@ -249,12 +249,10 @@ export default function HomePage() {
               From Dallas to the World
             </h2>
             <p className="section-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
-              Environmental justice is a global fight. SSR represents frontline communities on the international stage. </p>
-              </div>
+              Environmental justice is a global fight. SSR represents frontline communities on the international stage.
+            </p>
           </div>
-          <div className={styles.reachGrid}>
-            
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <div className={styles.reachCta}>
             <Link href="/global-reach" className="btn btn--outline-white">Our International Work</Link>
           </div>
         </div>

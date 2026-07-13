@@ -308,10 +308,21 @@
   position: relative;
 }
 
+.globalTeaser :global(.section-header) {
+  text-align: center;
+}
+
 .reachGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
+}
+
+.reachCta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2.5rem;
 }
 
 .reachCard {
