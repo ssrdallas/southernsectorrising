@@ -254,8 +254,6 @@ export default function HomePage() {
           </div>
           <div className={styles.reachGrid}>
             
-
-          </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <Link href="/global-reach" className="btn btn--outline-white">Our International Work</Link>
           </div>
