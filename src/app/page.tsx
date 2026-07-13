@@ -253,11 +253,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className={styles.reachGrid}>
-            {['Local', 'Regional', 'National', 'International'].map((level) => (
-              <div key={level} className={styles.reachCard}>
-                <h3>{level}</h3>
-              </div>
-            ))}
+            
+
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <Link href="/global-reach" className="btn btn--outline-white">Our International Work</Link>
