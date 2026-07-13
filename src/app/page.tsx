@@ -70,8 +70,8 @@ export default function HomePage() {
             <span className={styles.heroHighlight}>To a Global Movement</span>
           </h1>
           <p className={styles.heroDesc}>
-            What started as a battle against Shingle Mountain has grown into a network of{' '}
-            <strong>150+ allies</strong> across Dallas, Texas, the nation, and the world.
+            We center the perspectives of frontline communities by combating environmental
+            injustices across Dallas and beyond.
           </p>
           <div className={styles.heroCta}>
             <Link href="/our-work" className="btn btn--gold btn--lg">Explore Our Work</Link>
@@ -109,8 +109,8 @@ export default function HomePage() {
                 We organized. We fought. We won.
               </p>
               <p>
-                Today, we center the perspectives of frontline communities combating environmental
-                injustices across Dallas and beyond—operating on the{' '}
+                What started as a battle against Shingle Mountain has grown into a network of{' '}
+            <strong>150+ allies</strong> across Dallas, Texas, the nation, and the world, as we opering on the{' '}
                 <strong>Jemez Principles of Democratic Organizing Justice</strong>.
               </p>
               <Link href="/about" className="link-arrow" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
