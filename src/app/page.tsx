@@ -249,8 +249,8 @@ export default function HomePage() {
               From Dallas to the World
             </h2>
             <p className="section-desc" style={{ color: 'rgba(255,255,255,0.75)' }}>
-              Environmental justice is a global fight. SSR represents frontline communities on the international stage.
-      
+              Environmental justice is a global fight. SSR represents frontline communities on the international stage. </p>
+              </div>
           </div>
           <div className={styles.reachGrid}>
             
