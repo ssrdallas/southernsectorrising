@@ -110,7 +110,7 @@ export default function HomePage() {
               </p>
               <p>
                 What started as a battle against Shingle Mountain has grown into a network of{' '}
-            <strong>150+ allies</strong> across Dallas, Texas, the nation, and the world, as we opering on the{' '}
+            <strong>150+ allies</strong> across Dallas, Texas, the nation, and the world, as we operate on the{' '}
                 <strong>Jemez Principles of Democratic Organizing Justice</strong>.
               </p>
               <Link href="/about" className="link-arrow" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
