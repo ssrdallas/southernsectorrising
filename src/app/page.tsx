@@ -163,7 +163,7 @@ export default function HomePage() {
             <div>
               <Link href="/media#juneteenth-freedom-day" className={styles.eventHighlightsMedia} aria-label="View the Sandbranch mini-documentary on the media page">
                 <iframe
-                  src="https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview"
+                  src="https://drive.google.com/file/d/1MCYzNjexfT3BQXDL7HzA3_ONL9fXWfZz/preview"
                   title="2026 Juneteenth Freedom Day"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
