@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'Press coveragee, documentary film, and media resources for Southern Sector Rising and Dr. Marsha Jackson\'s environmental justice work in Southern Dallas.',
 };
 
-const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL = 'https://drive.google.com/file/d/1K3TpN5XRc4bG31ZlkuIIXybTMgbvAarY/preview';
+const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL = 'https://drive.google.com/file/d/1MCYzNjexfT3BQXDL7HzA3_ONL9fXWfZz/preview';
 const EVENT_HIGHLIGHTS_VIDEO_EMBED_URL_2 = 'https://drive.google.com/file/d/1Eu62L1bjTZ7oHC7-3eIWnGZGq2eRCS7V/preview';
 
 const buildExternalSearchUrl = (query: string) =>
