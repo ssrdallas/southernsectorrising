@@ -216,6 +216,18 @@ p:last-child { margin-bottom: 0; }
   border-color: var(--color-white);
 }
 
+.btn--white-green {
+  background: var(--color-white);
+  color: var(--color-forest);
+  border-color: var(--color-white);
+}
+.btn--white-green:hover {
+  background: #f7f7f2;
+  border-color: #f7f7f2;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 .btn--lg { padding: 1rem 2.25rem; font-size: 1.05rem; }
 .btn--sm { padding: 0.55rem 1.1rem; font-size: 0.85rem; }
 

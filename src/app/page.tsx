@@ -76,7 +76,7 @@ export default function HomePage() {
           <div className={styles.heroCta}>
             <Link href="/our-work" className="btn btn--gold btn--lg">Explore Our Work</Link>
             <Link href="/get-involved#donate" className="btn btn--outline-white btn--lg">Support The Movement</Link>
-            <Link href="/events#stay-informed" className="btn btn--gold btn--lg">Join Our Mailing List</Link>
+            <Link href="/events#stay-informed" className="btn btn--white-green btn--lg">Join Our Mailing List</Link>
           </div>
         </div>
         <div className={styles.scrollHint} aria-hidden="true">
